@@ -21,7 +21,7 @@
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
-  --bs-black: #000;
+  --bs-black: #000000;
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
@@ -8160,14 +8160,16 @@ textarea.form-control-lg {
 }
 
 .bg-dark {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.bg-black {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
-}
+    --bs-bg-opacity: 1;
+    --bs-dark-rgb: 92, 64, 51; /* Custom dark brown color */
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  }
+  
+  .bg-black {
+    --bs-bg-opacity: 1;
+    --bs-black-rgb: 92, 64, 51; /* Custom dark brown color */
+    background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+  }
 
 .bg-white {
   --bs-bg-opacity: 1;
