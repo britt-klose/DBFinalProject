@@ -71,8 +71,7 @@ add constraint CHK_location_id check(location_id between 1 and 5);
 -- add constraint on location_id to be between 1 and 5.
 alter table occurring
 add foreign key(location_id) references locations(location_id) on delete cascade,
-add foreign key(event_id) references events(event_id) on delete cascade,
-add constraint CHK_location_id check(location_id between 1 and 5);
+add foreign key(event_id) references events(event_id) on delete cascade;
 
 
 -- =====
@@ -80,7 +79,7 @@ add constraint CHK_location_id check(location_id between 1 and 5);
 -- =====
 -- altered order to create foreign key user_id and item_id
 -- table order error order does not exist
-alter table order
+alter table 'order'
 add foreign key(customer_id) references customers_10(customer_id) on delete cascade,
 add foreign key(item_id) references items(item_id) on delete cascade,
 add foreign key(location_id) reference locations(location_id) on delete cascade;
