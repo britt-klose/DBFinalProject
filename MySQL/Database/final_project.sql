@@ -79,7 +79,7 @@ add foreign key(event_id) references events(event_id) on delete cascade;
 -- =====
 -- altered order to create foreign key user_id and item_id
 -- table order error order does not exist
-alter table 'order'
+alter table `order`
 add foreign key(customer_id) references customers_10(customer_id) on delete cascade,
 add foreign key(item_id) references items(item_id) on delete cascade,
 add foreign key(location_id) reference locations(location_id) on delete cascade;
