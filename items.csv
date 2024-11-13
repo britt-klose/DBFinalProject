@@ -1,0 +1,30 @@
+item_id,item_name,item_price,item_calories,item_category,description
+1,Select Broccoli cheddar,8.99,360,soup,"Chopped broccoli, shredded carrots, and savory seasonings simmered in a smooth cheese sauce."
+2,Distinctly French onion,8.99,290,soup,"Sweet caramelized onions in a savory broth with a sherry wine vinegar gastrique, topped with cheese and savory sourdough bread. "
+3,Query chowder,8.89,330,soup,"Chow down on this chowder. Includes clams, chunks of potato, onions, and pork."
+4,Just bacon & Swiss ON rye,12.19,870,sandwich,"Crispy bacon, sliced swiss, mayo, lettuce and pepper on toasted rye bread. "
+5,GAN Club,13.39,900,sandwich,"Angus beef, provolone cheese nestled closely together on ciabatta toast spread with garlic aioli."
+6,Overfit this panini,12.19,890,sandwich,"Melted mozzarella, vine ripened tomatoes, fresh basil, and romaine lettuce on ciabatta bread with balsamic glaze and garlic aioli drizzle. "
+7,Unique club,8.39,750,sandwich,"Good old honey baked turkey, american sliced cheese, tomato, lettuce and mayo on a focaccia bread. "
+8,Slopey joe,10.19,1130,sandwich,"Ground beef, onion, and tomato sauce served on a hamburger bun. "
+9,Caesar Sesame Salad,11.99,540,salad,Sesame stick croutons and sesame oil caesar dressing add a twist to the classic caesar salad. 
+10,Stress Final Salad,"2,500",650,salad,This brain boosting salad includes blueberries and walnuts served over a bed of spring mix with a berry vinaigrette. **Included with this salad is one ticket to skip finals week** All SALES FINAL
+11,Ascii bowl,8.99,440,salad,"Pureed berries served in a bowl and topped with granola, bananas, and blueberries."
+12,Diced Apples with Tuscan Apple Dressing,11.99,550,salad,"Arugula, pecans, and apples served with a tangy tuscan apple dressing. "
+13,Dimensional Chicken Salad,13.49,660,salad,2 styles of chicken salad served with crackers. 
+14,Hidden Layer Cake,8.9,870,bakery,Tiered vanilla cake with a hidden layer of strawberry jam. 
+15,Grayscale Cookie,3.39,450,bakery,Our spin on a traditional black and white cookie with frosting that gradually goes from light to dark. 
+16,RBG Brownie,3.89,470,bakery,Fudgy brownies made with semisweet chocolate chunks 
+17,Ascending Chocolate Macaroon,1.99,190,bakery,Chocolate and shredded coconut are the stars of this chewy treat.
+18,Apple Strudel Version 8.0,4.19,480,bakery,"Fresh apples, cinnamon, and sugar wrapped in a warm puff pastry. "
+19,GPTea ,3.75,0,hot_drink,Green Tea with a hint of spearmint. 
+20,Latent Chai Spice,6.25,230,hot_drink,Cinnamon and clove infused black tea combined with steamed milk. 
+21,Layered Latte,6.5,330,hot_drink,Espresso balanced with steamed milk and a light layer of foam.
+22,Convolutional Cappuccino,6.5,130,hot_drink,Rich espresso under a layer of thick milk foam. 
+23,Softmax Macchiato,6.5,350,hot_drink,Freshly steamed milk marked with espresso and topped with a caramel drizzle.
+24,Homebrew Coffee,3.75,5,hot_drink,Our classic freshly brewed medium roast coffee.
+25,Filtered Coffee,3.75,5,hot_drink,Full-bodied dark roast coffee.
+26,Max Pool Lemonade,5.5,220,cold_drink,Refreshing Lemonade with a lemon garnish. 
+27,MangoDB Iced Tea,5.5,20,cold_drink,Black tea shaken with mango puree. 
+28,Install Cold Brew,7.25,5,cold_drink,Slow-steeped in cool water for 20 hours for a super smooth flavor.
+29,Coffee Forouraghi-ccino,6.5,350,cold_drink,"Roasted coffee, ice, and milk blended beverage."
