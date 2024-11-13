@@ -1,4 +1,4 @@
-item_id,item_name,item_price,item_calories,item_category,description
+item_id,name,price,calories,category,description
 1,Select Broccoli cheddar,8.99,360,soup,"Chopped broccoli, shredded carrots, and savory seasonings simmered in a smooth cheese sauce."
 2,Distinctly French onion,8.99,290,soup,"Sweet caramelized onions in a savory broth with a sherry wine vinegar gastrique, topped with cheese and savory sourdough bread. "
 3,Query chowder,8.89,330,soup,"Chow down on this chowder. Includes clams, chunks of potato, onions, and pork."
