@@ -95,6 +95,7 @@ add foreign key(customer_id) references customers_10(customer_id) on delete casc
 add foreign key(event_id) references events(event_id) on delete cascade,
 add constraint CHK_spots_left check(spots_left between 0 and 100);
 
+
 -- =======
 -- REWARDS
 -- =======
