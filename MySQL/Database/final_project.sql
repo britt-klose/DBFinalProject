@@ -16,7 +16,7 @@ customer information, food items, cafe locations, customer reward history, and c
 			   ------------
 	-- occuring(location_id, event_id)
     
-	-- order(customer_id, item_id)
+	-- order(order_id, customer_id, item_id, location_id)
 	
     	-- reserve(reservation_id, customer_id, event_id, spots_left)
 			   --------------
@@ -77,9 +77,10 @@ add foreign key(event_id) references events(event_id) on delete cascade;
 -- =====
 -- ORDER
 -- =====
--- altered order to create foreign key user_id and item_id
+-- altered order to create primary key as order_id and foreign key user_id and item_id
 -- table order error order does not exist
 alter table `order`
+add constraint PK_constraint primary key(order_id),
 add foreign key(customer_id) references customers_10(customer_id) on delete cascade,
 add foreign key(item_id) references items(item_id) on delete cascade,
 add foreign key(location_id) reference locations(location_id) on delete cascade;
