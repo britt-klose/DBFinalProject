@@ -6,9 +6,7 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-const express = require("express");
-const app = express();
-const port = 3000;
+
 
 //******************************************************************************
 //*** set up mysql connections
