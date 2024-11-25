@@ -175,6 +175,11 @@ p {
   margin-bottom: 1rem;
 }
 
+#table1{
+  font-size: large;
+}
+
+
 abbr[title] {
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
