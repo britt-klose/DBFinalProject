@@ -11,6 +11,6 @@ pool.query(`SELECT * FROM items`, (err, res) => {
     if (err) {
         return console.error('Error executing query:', err);
     }
-    console.log('Query results:', res);
+    console.log('Query testing:', res);
     //testing commit by britt 
 });
