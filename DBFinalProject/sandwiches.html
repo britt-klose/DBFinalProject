@@ -24,8 +24,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Start Order</a></li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/account_info.html">Account Information</a></li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:54365/DBFinalProject/location.html">Location</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -39,6 +37,9 @@
                                 <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/cold_drinks.html">Cold Drinks</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/account_info.html">Account Information</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:54365/DBFinalProject/location.html">Location</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/events.html">Events</a></li>
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
@@ -50,11 +51,18 @@
                 </div>
             </div>
         </nav>
-                            <!-- Our Menu Section -->
-    <section class="our-menu py-5">
-        <div class="menu-container">
-            <i class="fas fa-bars menu-icon"></i>
-            <h2 class="our-menu-heading">Sandwiches</h2></div>
+    <header>
+        <script src="search.js"></script><!-- connected with search.js -->
+    </header>
+        <!-- Header-->
+        <header  class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder"> Sandwiches </h1>
+                </div>
+            </div>
+        </header>
+    <!-- Our Menu Section -->
     </section>
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -142,8 +150,8 @@
                       <!--Item 5-->
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- New badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
                             <!-- Product image-->
                             <img class="card-img-top" src="/img/itemimgs/soup1.jpg" alt="..." />
                             <!-- Product details-->
@@ -152,7 +160,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Slopey Joe</h5>
                                     <!-- Product price-->
-                                    10.19
+                                    $10.19
                                 </div>
                             </div>
                             <!-- Product actions-->
