@@ -4,6 +4,5 @@
 }
 
 .promo-image img {
-    width: 100px;  /* or any other specific size */
-    height: 100px; /* maintain aspect ratio if needed */
+    border-radius: 100px; /* 设置圆角的大小 */
 }
