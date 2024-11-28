@@ -1,0 +1,9 @@
+.promo-image img {
+    width: 100%;
+    height: auto;
+}
+
+.promo-image img {
+    width: 100px;  /* or any other specific size */
+    height: 100px; /* maintain aspect ratio if needed */
+}
