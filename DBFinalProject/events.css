@@ -7,8 +7,27 @@ body {
 }
 
 /* Header styles */
+header .navbar {
+    background-color: #8b5e3c; /* Medium brown */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-.calendar{
-    gap: 20px;
-    padding: 20px;
-    }
+header .navbar .logo {
+    font-size: 24px;
+    color: white;
+}
+
+header .navbar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.2s;
+}
+
+header .navbar nav a:hover, header .navbar nav .active {
+    background-color: #5c4033; /* Dark brown */
+    border-radius: 5px;
+}
