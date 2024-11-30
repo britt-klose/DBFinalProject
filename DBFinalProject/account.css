@@ -2,29 +2,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(171,136,109); /* Creamy off-white background */
-    color:  rgb(73, 54, 40);; /* Dark brown */
-}
-
-/* Header styles */
-header .navbar {
-    background-color: rgb(171,136,109); /* Medium brown */
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .navbar .logo {
-    font-size: 24px;
-    color: white;
-}
-
-header .navbar nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: background-color 0.2s;
+    background-color:rgb(171,136,109); /* Creamy off-white background */
+    color:  rgb(73, 54, 40); /* Dark brown */
 }
 
 header .navbar nav a:hover, header .navbar nav .active {
@@ -41,19 +20,19 @@ body, html {
 }
 
 #t1 {
-    width: 400px;
-    height: 300px;
-    padding: 100px;
+    background-color:rgb(214,192,179);
+    width: 500px;
+    height: 500px;
+    padding: 0;
     border: 1px rgb(73, 54, 40);
-    margin: 0;
+    margin: 50;
     text-align: center;
-    justify-content: center; /* Centers the container horizontally */
-    align-items: center; /* Centers the container vertically */
+    justify-content: space-around;
 }
 
 #password{
     width: 50%;
-    padding: 12px 20px;
+    padding: 10px 10px;
     margin: 8px 0;
     box-sizing: border-box;
     justify-content: center; /* Centers the container horizontally */
@@ -62,16 +41,21 @@ body, html {
 
 #email{
     width: 50%;
-    padding: 12px 20px;
+    padding: 10px 10px;
     margin: 8px 0;
     box-sizing: border-box;
     justify-content: center; /* Centers the container horizontally */
     align-items: center; /* Centers the container vertically */
 }
 
-#ca1 { 
+#ca1{ 
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
     margin: auto;
     justify-content: center; /* Centers the container horizontally */
     align-items: center; /* Centers the container vertically */
+    justify-content: space-around;
+
 }
 
