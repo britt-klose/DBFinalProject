@@ -1,0 +1,14 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f1ea; /* Creamy off-white background */
+    color: #5c4033; /* Dark brown */
+}
+
+/* Header styles */
+
+.calendar{
+    gap: 20px;
+    padding: 20px;
+    }
