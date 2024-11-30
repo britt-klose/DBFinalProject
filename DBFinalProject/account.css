@@ -1,0 +1,77 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(171,136,109); /* Creamy off-white background */
+    color:  rgb(73, 54, 40);; /* Dark brown */
+}
+
+/* Header styles */
+header .navbar {
+    background-color: rgb(171,136,109); /* Medium brown */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .navbar .logo {
+    font-size: 24px;
+    color: white;
+}
+
+header .navbar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.2s;
+}
+
+header .navbar nav a:hover, header .navbar nav .active {
+    background-color: rgb(73, 54, 40); /* Dark brown */
+    border-radius: 5px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    justify-content: center; /* Centers the container horizontally */
+    align-items: center; /* Centers the container vertically */
+}
+
+#t1 {
+    width: 400px;
+    height: 300px;
+    padding: 100px;
+    border: 1px rgb(73, 54, 40);
+    margin: 0;
+    text-align: center;
+    justify-content: center; /* Centers the container horizontally */
+    align-items: center; /* Centers the container vertically */
+}
+
+#password{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    justify-content: center; /* Centers the container horizontally */
+    align-items: center; /* Centers the container vertically */
+}
+
+#email{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    justify-content: center; /* Centers the container horizontally */
+    align-items: center; /* Centers the container vertically */
+}
+
+#ca1 { 
+    margin: auto;
+    justify-content: center; /* Centers the container horizontally */
+    align-items: center; /* Centers the container vertically */
+}
+

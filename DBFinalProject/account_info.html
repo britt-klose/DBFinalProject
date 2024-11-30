@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enjoy Our Delicious Coffee and Pastries at Cafe Java!" />
+    <meta name="Deare Abudushalamu, Brittany Klose, Katrina Cwiertniewicz," content="Cafe La Java" />
+    <title>Cafe La Java</title>
+    <link rel="stylesheet" href="DBFinalProject/styles.css"><!-- connected with style.css -->
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,33 +21,76 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
         <link href="styles.css" rel="stylesheet" />
-        <link href="img.css" />
+        <link href="account.css" rel="stylesheet" />
     </head>
     <body>
-<form action="index.php" method="POST">
-            
-    <label for="username">username:</label>
-    <input type="text" id="username" placeholder="Username" minlength="6" maxlength="20" required>
-    <br>
-    <label for="password">password:</label>
-    <input type="password" id="password" placeholder="Password" minlength="6" maxlength="20" required>
-    <br>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="http://127.0.0.1:5501/DBFinalProject/Index.html">Java Cafe</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Start Order</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/menu.html">All Menu</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/sandwiches.html">Sandwiches</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/salads_bowls.html">Salads & Bowls</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/soups.html">Soups</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/bakery.html">Bakery</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/hot_drinks.html">Hot Drinks</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/cold_drinks.html">Cold Drinks</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/account_info.html">Account Information</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/location.html">Location</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/events.html">Events</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    <header>
+        <script src="search.js"></script><!-- connected with search.js -->
+    </header>
+    <!-- Login Table-->
+    <table id="t1" border=1 Style="background-color: rgb(228, 224, 225)" width=600 align=center>
+        <tr><td>
+        <br>
+        <div align=center>
+        <FORM NAME="mydbform"
+            ACTION="show.php"
+            METHOD="get">
 
-    <label for=""email>email:</label>
-    <input type="email" id="email" placeholder="email"><br>
+            <b align=center style="color:rgb(73,54,40); font-family:verdana; font-size: 30pt">Login</b>
+            <br><br>
+            Email:
+            <input type="email" id="email" placeholder="email" required><br>
+            <br>
 
-    <label for="phone">phone #:</label>
-    <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-    <label for="bday">birthdate:</label>
-    <input type="date" id="bday"><br>
-
-    <label for="quantity">quantity:</label>
-    <input type="number" id="quantity" min="0" max="99" value="1"<br>
-
-    <input type="reset"><br>
-    <input type="submit">
-
-</form>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+            Password:
+            <input type="password" id="password" placeholder="Password" minlength="6" maxlength="20" required> <br>
+            <br><br>
+            <input type="SUBMIT" VALUE="Sign In"><br>
+            <br>
+            <!-- Create Account-->
+            <form id="ca1" action="create_account.html">
+                <button type="button">Join JavaRewards!</button>
+                </form>
+        </FORM>
+        </div>
+        </td></tr>
+        </table>
+    </body>
 </html>
+
+
