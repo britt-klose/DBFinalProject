@@ -6,10 +6,13 @@ let events = [];
 // letiables to store event input fields and reminder list
 let eventDateInput =
 	document.getElementById("eventDate");
+let eventTimeInput = 
+	document.getElementById("eventTime");
 let eventTitleInput =
 	document.getElementById("eventTitle");
 let eventDescriptionInput =
 	document.getElementById("eventDescription");
+
 let reminderList =
 	document.getElementById("reminderList");
 
@@ -19,8 +22,10 @@ let eventIdCounter = 1;
 // Function to add events
 function addEvent() {
 	let date = eventDateInput.value;
+	let time = eventTimeInput.value;
 	let title = eventTitleInput.value;
 	let description = eventDescriptionInput.value;
+	
 
 	if (date && title) {
 		// Create a unique event ID
@@ -28,13 +33,14 @@ function addEvent() {
 
 		events.push(
 			{
-				id: eventId, date: date,
+				id: eventId, date: date, time:time,
 				title: title,
 				description: description
 			}
 		);
 		showCalendar(currentMonth, currentYear);
 		eventDateInput.value = "";
+		eventTimeInput.value = "";
 		eventTitleInput.value = "";
 		eventDescriptionInput.value = "";
 		displayReminders();
