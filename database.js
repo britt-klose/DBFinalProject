@@ -14,4 +14,4 @@ pool.query(`SELECT * FROM items`, (err, res) => {
     console.log('Query testing:', res);
   
 });
- //test 
+ 
