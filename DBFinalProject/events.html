@@ -69,6 +69,14 @@
                 </div>
             </header>
     <!-- Calendar -->  
+	<SELECT NAME="selbox">
+		<OPTION SELECTED> Location #
+		<OPTION> 1
+		<OPTION> 2
+		<OPTION> 3
+		<OPTION> 4
+			<OPTION> 5
+		</SELECT>
     <body>
 	<!-- Main wrapper for the calendar application -->
 	<div class="wrapper">
@@ -80,9 +88,10 @@
 					<input type="text"
 						id="eventTitle"
 						placeholder="Event Title">
-					<input type="text"
-						id="eventDescription"
-						placeholder="Event Description">
+						<br>
+					<input type="number" min="1" max="10"
+						id="evevt_id"
+						placeholder="event_id">
 					<button id="addEvent" onclick="addEvent()">
 						Add
 					</button>
