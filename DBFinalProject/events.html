@@ -12,18 +12,18 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <!-- Calendar Functionality -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+        <!-- Stlyesheets-->
         <link href="styles.css" rel="stylesheet" />
         <link href="events.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/calendar.css"> 
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"
+                content="width=device-width, 
+                        initial-scale=1.0">
     </head>
-<body>
-         <!-- Navigation-->
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="http://127.0.0.1:5501/DBFinalProject/Index.html">Java Cafe</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -33,7 +33,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/menu.html">All Menu</a></li>
+                                <li><a class="dropdown-item" href="#url">All Menu</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/sandwiches.html">Sandwiches</a></li>
                                 <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/salads_bowls.html">Salads & Bowls</a></li>
@@ -57,52 +57,98 @@
                 </div>
             </div>
         </nav>
-    <header>
-        <script src="search.js"></script><!-- connected with search.js -->
-    </header>
-        <!-- Header-->
-        <header  class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder"> Events </h1>
-                </div>
-            </div>
+        <header>
+            <script src="search.js"></script><!-- connected with search.js -->
         </header>
-    <br>
-    <!-- Calendar -->   
-    <section>
-        <div class="container">	
-            <div class="page-header">
-                <div class="pull-right form-inline">
-                    <div class="btn-group">
-                        <button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
-                        <button class="btn btn-default" data-calendar-nav="today">Today</button>
-                        <button class="btn btn-primary" data-calendar-nav="next">Next >></button>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-warning" data-calendar-view="year">Year</button>
-                        <button class="btn btn-warning active" data-calendar-view="month">Month</button>
-                        <button class="btn btn-warning" data-calendar-view="week">Week</button>
-                        <button class="btn btn-warning" data-calendar-view="day">Day</button>
+            <!-- Header-->
+            <header class="bg-dark py-5">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-white">
+                        <h1 class="display-4 fw-bolder"> Events </h1>
                     </div>
                 </div>
-                <h3></h3>
-                <small>To see example with events navigate to Februray 2018</small>
-            </div>
-            <div class="row">
-                <div class="col-md-9">
-                    <div id="showEventCalendar"></div>
-                </div>
-                <div class="col-md-3">
-                    <h4>All Events List</h4>
-                    <ul id="eventlist" class="nav nav-list"></ul>
-                </div>
-            </div>	
-        </div>
-    </section>
-    <!-- Calendar Functionality -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="js/calendar.js"></script>
-    <script type="text/javascript" src="js/events.js"></script>
+            </header>
+    <!-- Calendar -->  
+    <body>
+	<!-- Main wrapper for the calendar application -->
+	<div class="wrapper">
+		<div class="container-calendar">
+			<div id="left">
+				<div id="event-section">
+					<h3>Add Event</h3>
+					<input type="date" id="eventDate">
+					<input type="text"
+						id="eventTitle"
+						placeholder="Event Title">
+					<input type="text"
+						id="eventDescription"
+						placeholder="Event Description">
+					<button id="addEvent" onclick="addEvent()">
+						Add
+					</button>
+				</div>
+				<div id="reminder-section">
+					<h3>Reminders</h3>
+					<!-- List to display reminders -->
+					<ul id="reminderList">
+						<li data-event-id="1">
+							<strong>Event Title</strong>
+							- Event Description on Event Date
+							<button class="delete-event"
+								onclick="deleteEvent(1)">
+								Delete
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="right">
+				<h3 id="monthAndYear"></h3>
+				<div class="button-container-calendar">
+					<button id="previous"
+							onclick="previous()">
+						‹
+					</button>
+					<button id="next"
+							onclick="next()">
+						›
+					</button>
+				</div>
+				<table class="table-calendar"
+					id="calendar"
+					data-lang="en">
+					<thead id="thead-month"></thead>
+					<!-- Table body for displaying the calendar -->
+					<tbody id="calendar-body"></tbody>
+				</table>
+				<div class="footer-container-calendar">
+					<label for="month">Jump To: </label>
+					<!-- Dropdowns to select a specific month and year -->
+					<select id="month" onchange="jump()">
+						<option value=0>Jan</option>
+						<option value=1>Feb</option>
+						<option value=2>Mar</option>
+						<option value=3>Apr</option>
+						<option value=4>May</option>
+						<option value=5>Jun</option>
+						<option value=6>Jul</option>
+						<option value=7>Aug</option>
+						<option value=8>Sep</option>
+						<option value=9>Oct</option>
+						<option value=10>Nov</option>
+						<option value=11>Dec</option>
+					</select>
+					<!-- Dropdown to select a specific year -->
+					<select id="year" onchange="jump()"></select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Include the JavaScript file for the calendar functionality -->
+	<script src="event_calendar.js"></script>
     </body>
 </html>
+
+    
+        
+
