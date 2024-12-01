@@ -11,7 +11,11 @@ module.exports={
             token=token.split(" ").pop().trim();
         }
         if (!token){
+<<<<<<< HEAD
             return req:
+=======
+            return req;
+>>>>>>> 14d39d2ac17bcc00e51acf7619753ccae964532b
         }
 
         try{
