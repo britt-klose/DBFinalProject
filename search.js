@@ -1,5 +1,5 @@
 //******************************************************************************
-//*** set up an HTTP server off port 3000
+//*** set up an HTTP server off port 9542
 //******************************************************************************
 const express = require("express");
 const app = express();

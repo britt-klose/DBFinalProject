@@ -12,328 +12,144 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+        <!-- Stlyesheets-->
         <link href="styles.css" rel="stylesheet" />
+        <link href="events.css" rel="stylesheet" />
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"
+                content="width=device-width, 
+                        initial-scale=1.0">
     </head>
-<body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="http://127.0.0.1:5501/DBFinalProject/Index.html">Java Cafe</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Start Order</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/menu.html">All Menu</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/sandwiches.html">Sandwiches</a></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/salads_bowls.html">Salads & Bowls</a></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/soups.html">Soups</a></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/bakery.html">Bakery</a></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/hot_drinks.html">Hot Drinks</a></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/cold_drinks.html">Cold Drinks</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/account_info.html">Account Information</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/location.html">Location</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/events.html">Events</a></li>
-                </ul>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
-                </form>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="http://127.0.0.1:5501/DBFinalProject/Index.html">Java Cafe</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Start Order</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#url">All Menu</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/sandwiches.html">Sandwiches</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/salads_bowls.html">Salads & Bowls</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/soups.html">Soups</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/bakery.html">Bakery</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/hot_drinks.html">Hot Drinks</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/cold_drinks.html">Cold Drinks</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/account_info.html">Account Information</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/location.html">Location</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/events.html">Events</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
-<br>
-<!-- Calendar -->
-<!-- December -->
-<h2 align="center" style="background-color: rgb(171, 136, 109);" style="color: rgb(73, 54, 40)"> 
-    December 2024
-</h2>
-<br>
-<table Style="background-color: rgb(228, 224, 225)"  align="center" cellspacing="21" cellpadding="21" ;
-<thread> 
-    <tr>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>sat</th>
-    </tr>
-</thread>
-
-<tbody>
-    <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-    </tr>
-    <tr></tr>
-    <tr>
-        <td>8</td>
-        <td>9</td>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-    </tr>
-    <tr>
-        <td>15</td>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-        <td>19</td>
-        <td>20</td>
-        <td>21</td>
-    </tr>
-    <tr>
-        <td>22</td>
-        <td>23</td>
-        <td>24</td>
-        <td>25</td>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
-    </tr>
-    <tr>
-        <td>29</td>
-        <td>30</td>
-        <td>31</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</tbody>
-</table>
-
-<!-- January -->
-<h2 align="center" style="background-color: rgb(171, 136, 109);" style="color: rgb(73, 54, 40)"> 
-    January 2025
-</h2>
-<br>
-<table Style="background-color: rgb(228, 224, 225)"  align="center" cellspacing="21" cellpadding="21" ;
-<thread> 
-    <tr>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>sat</th>
-    </tr>
-</thread>
-
-<tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-    </tr>
-    <tr></tr>
-    <tr>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-        <td>10</td>
-        <td>11</td>
-    </tr>
-    <tr>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-    </tr>
-    <tr>
-        <td>19</td>
-        <td>20</td>
-        <td>21</td>
-        <td>22</td>
-        <td>23</td>
-        <td>24</td>
-        <td>25</td>
-    </tr>
-    <tr>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
-        <td>29</td>
-        <td>30</td>
-        <td>31</td>
-        <td></td>
-    </tr>
-</tbody>
-</table>
-
-<!--February--> 
-<h2 align="center" style="background-color: rgb(171, 136, 109);" style="color: rgb(73, 54, 40)"> 
-    February 2024
-</h2>
-<br>
-<table Style="background-color: rgb(228, 224, 225)"  align="center" cellspacing="21" cellpadding="21" ;
-<thread> 
-    <tr>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>sat</th>
-    </tr>
-</thread>
-
-<tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>1</td>
-    </tr>
-    <tr></tr>
-    <tr>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-    </tr>
-    <tr>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-        <td>19</td>
-        <td>20</td>
-        <td>21</td>
-        <td>22</td>
-    </tr>
-    <tr>
-        <td>23</td>
-        <td>24</td>
-        <td>25</td>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
-        <td></td>
-    </tr>
-</tbody>
-</table>
-
-<!-- March -->
-<h2 align="center" style="background-color: rgb(171, 136, 109);" style="color: rgb(73, 54, 40)"> 
-    March 2024
-</h2>
-<br>
-<table Style="background-color: rgb(228, 224, 225)"  align="center" cellspacing="21" cellpadding="21" ;
-<thread> 
-    <tr>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>sat</th>
-    </tr>
-</thread>
-<tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>1</td>
-    </tr>
-    <tr></tr>
-    <tr>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-    </tr>
-    <tr>
-        <td>16</td>
-        <td>17</td>
-        <td>18</td>
-        <td>19</td>
-        <td>20</td>
-        <td>21</td>
-        <td>22</td>
-    </tr>
-    <tr>
-        <td>23</td>
-        <td>24</td>
-        <td>25</td>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
-        <td>29</td>
-    </tr>
-    <tr>
-        <td>30</td>
-        <td>31</td>
-        <td></td>
-        <td></tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</tbody>
-</table>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        </nav>
+        <header>
+            <script src="search.js"></script><!-- connected with search.js -->
+        </header>
+            <!-- Header-->
+            <header class="bg-dark py-5">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-white">
+                        <h1 class="display-4 fw-bolder"> Events </h1>
+                    </div>
+                </div>
+            </header>
+    <!-- Calendar -->  
+    <body>
+	<!-- Main wrapper for the calendar application -->
+	<div class="wrapper">
+		<div class="container-calendar">
+			<div id="left">
+				<div id="event-section">
+					<h3>Add Event</h3>
+					<input type="date" id="eventDate">
+					<input type="time" id="eventTime">
+					<input type="text"
+						id="eventTitle"
+						placeholder="Event Title">
+					<input type="text"
+						id="eventDescription"
+						placeholder="Event Description">
+					<button id="addEvent" onclick="addEvent()">
+						Add
+					</button>
+				</div>
+				<div id="reminder-section">
+					<h3>Reminders</h3>
+					<!-- List to display reminders -->
+					<ul id="reminderList">
+						<li data-event-id="1">
+							<strong>Event Title</strong>
+							- Event Description on Event Date
+							<button class="delete-event"
+								onclick="deleteEvent(1)">
+								Delete
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="right">
+				<h3 id="monthAndYear"></h3>
+				<div class="button-container-calendar">
+					<button id="previous"
+							onclick="previous()">
+						‹
+					</button>
+					<button id="next"
+							onclick="next()">
+						›
+					</button>
+				</div>
+				<table class="table-calendar"
+					id="calendar"
+					data-lang="en">
+					<thead id="thead-month"></thead>
+					<!-- Table body for displaying the calendar -->
+					<tbody id="calendar-body"></tbody>
+				</table>
+				<div class="footer-container-calendar">
+					<label for="month">Jump To: </label>
+					<!-- Dropdowns to select a specific month and year -->
+					<select id="month" onchange="jump()">
+						<option value=0>Jan</option>
+						<option value=1>Feb</option>
+						<option value=2>Mar</option>
+						<option value=3>Apr</option>
+						<option value=4>May</option>
+						<option value=5>Jun</option>
+						<option value=6>Jul</option>
+						<option value=7>Aug</option>
+						<option value=8>Sep</option>
+						<option value=9>Oct</option>
+						<option value=10>Nov</option>
+						<option value=11>Dec</option>
+					</select>
+					<!-- Dropdown to select a specific year -->
+					<select id="year" onchange="jump()"></select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Include the JavaScript file for the calendar functionality -->
+	<script src="event_calendar.js"></script>
+    </body>
 </html>
+
+    
+        
+
