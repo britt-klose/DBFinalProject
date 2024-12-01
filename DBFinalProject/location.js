@@ -5,7 +5,7 @@ function searchLocations() {
         .then(response => response.json())
         .then(data => {
             var resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = ''; // 清空之前的搜索结果
+            resultsDiv.innerHTML = ''; 
             data.forEach(item => {
                 var article = document.createElement('article');
                 article.className = 'location';
