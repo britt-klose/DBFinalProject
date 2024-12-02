@@ -15,6 +15,9 @@
 
         <link href="styles.css" rel="stylesheet" />
         <link href="location.css" rel="stylesheet" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
     </head>
     <body>
         <!-- Navigation-->
@@ -64,31 +67,38 @@
                 </div>
             </div>
         </header>
-        <label>
-            Search Your City
+        <section>
+            <label for="searchInput">
+                Search Your City
             </label>
-        <input type="text" id="searchInput" placeholder="Enter city name...">
-        <button onclick="searchLocations()">Search</button>
-        <div id="results"></div>
-
+            <form>
+                <!-- Corrected the usage of Font Awesome icon -->
+                <div style="position: relative; display: inline-block;">
+                    <i class="fas fa-search" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);"></i>
+                    <input type="text" id="searchInput" placeholder="Enter city name..." style="padding-left: 30px;">
+                </div>
+                <button type="button" onclick="searchLocations()">Search</button>
+                <div id="results"></div>
+            </form>
+        </section>
         <main>
             <section class="locations">
                 <!-- Location 1-->
-                <article class="location">
+                <article class="location" data-city="Philadelphia">
                     <img src="/img/locationimgs/Philadelphia.jpg" alt="Java Cafe Interior: Philadelphia" width="200" height="150">
                     <h2>Java Cafe - East </h2>
                     <p>1306 Dickinson Street <br> Philadelphia, PA 19147 </p>
                 </article>
 
                 <!-- Location 2-->    
-                <article class="location">
+                <article class="location" data-city="Cherry Hill">
                     <img src="/img/itemimgs/download.jpg" alt="Java Cafe Interior: New Jersey" width="200" height="150">
                     <h2>Java Cafe - Suburb </h2>
                     <p>606 Haddonfield Road <br> Cherry Hill, NJ 8002</p>
                 </article>
 
                 <!-- Location 3-->    
-                <article class="location">
+                <article class="location" data-city="Cherry Hill">
                     <img src="/img/locationimgs/Florida.jpg" alt="Java Cafe Interior: Florida" width="200" height="150">
                     <h2>Java Cafe - Beach</h2>
                     <p>901 S Howard Avenue <br> Tampa, FL 33606</p>
