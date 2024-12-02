@@ -5,6 +5,7 @@ body {
     background-color: #f4f1ea; /* Creamy off-white background */
     color: #5c4033; /* Dark brown */
 	font-size: 14px;
+    align-items: center;
 }
 
 /* Header styles */
