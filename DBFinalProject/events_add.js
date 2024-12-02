@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
       events: [
         {
           title: 'Open Mic',
-          url:'',
+          href:'http://127.0.0.1:5501/DBFinalProject/event_registration.html',
           start: '2024-12-24T15:00:00'
         },
         {
@@ -65,3 +65,4 @@ document.addEventListener('DOMContentLoaded', function() {
   
     calendar.render();
   });
+  

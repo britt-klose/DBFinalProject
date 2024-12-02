@@ -58,26 +58,32 @@
         <header  class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder"> Cold Drinks </h1>
+                    <h1 class="display-4 fw-bolder"> Event Registration </h1>
                 </div>
             </div>
         </header>
 <BR><BR>
-<FORM NAME="search" ACTION="http://127.0.0.1:5501/DBFinalProject/event_registration.html" METHOD="post">
+<FORM align="center" NAME="search" ACTION="http://127.0.0.1:5501/DBFinalProject/event_registration.html" METHOD="post">
 
      <fieldset style="width: 500px">
-         <legend><b>Event Registration</b></legend>
+         <legend align="center"><b>Event Registration</b></legend>
          <br><br>
 
-          Title:
+        Name: 
+
+
+        Name of Event:
          <INPUT TYPE="TEXT" NAME="Name of Event" VALUE="" >
          <br><br>
 
-          Description:
-         <INPUT TYPE="TEXT" NAME="detail" VALUE="" >
+        Location:
+        <SELECT NAME="location">
+            <OPTION SELECTED>Location</OPTION>
+            <OPTION>Graduate</OPTION>
+    </SELECT>
          <br><br>
 
-         Credits:
+        Credits:
                 <SELECT NAME="credits">
                         <OPTION SELECTED>1</OPTION>
                         <OPTION>2</OPTION>
