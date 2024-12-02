@@ -6,6 +6,8 @@ const cors = require('cors'); // For web security
 port=8081;
 // // Create an instance of express
 const app = express();
+app.use(express.json());
+app.use(express.static('public'));
 app.use(cors()); // Enable CORS for the frontend React app
 
 // // Create a connection to the MySQL database
@@ -20,6 +22,19 @@ database: "cafe" // Name of the database
 app.get('/', (req, res) => {
 //     // Respond with a JSON message
 return res.json("From backend side");
+});
+// Define a route to fetch locations based on town or city name 
+// Define a route to fetch locations based on town or city name
+app.get('/search', (req, res) => {
+    const cityTerm = req.query.city || ''; // Get the city search term from query parameters
+    const sql = `SELECT location_address, town_city, state, zipcode, image_url FROM locations WHERE town_city LIKE ?`; // SQL query to search locations by city
+    db.query(sql, [`%${cityTerm}%`], (err, results) => { // Use a parameterized query to prevent SQL injection
+        if (err) {
+            console.error('Failed to execute query:', err);
+            return res.status(500).json({ error: 'Internal server error' });
+        }
+        return res.json(results); // Return the query results as JSON
+    });
 });
 
 // // Define a route to fetch all items or search items by name
