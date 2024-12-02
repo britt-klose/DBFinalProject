@@ -59,20 +59,37 @@
                     <h1 class="display-4 fw-bolder">
                         Enjoy Our Delicious Coffee and Pastries at Java Cafe!
                     </h1>
-                <!-- Cafe Video -->
-                <video controls autoplay loop width="700px"> 
-                    <source src="/DBFinalProject/main_audio_video/Cafe_Video.mp4" type ="video/mp4">
-                </video>                 
+        <!-- Cafe Video -->
+            <video width="800" autoplay loop muted> 
+                <source src="/DBFinalProject/main_audio_video/Cafe_Video.mp4" type ="video/mp4">
+                Your browser does not support the video element.
+            </video> 
+            <br>  
+        <!-- Cafe Music-->
+            <audio id="myMusic">
+                <source src="/DBFinalProject/main_audio_video/Cafe_Jazz.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+                  
+                <button onclick="playMusic()" type="button">Music ON</button>
+                <button onclick="pauseMusic()" type="button">Music OFF</button> 
+                  
+                <script>
+                    var x = document.getElementById("myMusic"); 
+                    
+                    function playMusic() { 
+                      x.play(); 
+                    } 
+                    
+                    function pauseMusic() { 
+                      x.pause(); 
+                    } 
+                    </script>
+
                     <p></p>
                     <p class="lead fw-normal text-white-75 mb-0">Java Cafe strives to offer the highest quality foods and utilize local plant-based farm to table and organic ingredients whenever available.</p><p>
-                    <p class="lead fw-normal text-white-75 mb-0">All our coffee is responsibly sourced from Rainforest Alliance Certified Coffee farms.</p><p></p>
-            <!-- Audio-->
-            <br>
-            <audio controls mute autoplay loop>
-                <source src="/DBFinalProject/main_audio_video/Cafe_Jazz.mp3" type="audio/mpeg">
-                </audio>      
-                </div>
-            </div> 
+                    <p class="lead fw-normal text-white-75 mb-0">All our coffee is responsibly sourced from Rainforest Alliance Certified Coffee farms.</p><p></p><br>
+        
         <!-- Promotional Deal -->
         </header>
         <div class="promo-section">
