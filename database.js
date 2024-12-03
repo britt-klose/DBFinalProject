@@ -1,11 +1,15 @@
 // Import required modules
 const express = require('express'); // Express framework for handling HTTP requests
+const bodyParser = require('body-parser');  // body-parser
 const mysql = require('mysql2'); // MySQL2 client for Node.js
 const cors = require('cors'); // For web security
+
 //const {authMiddleware} = require('.auth.js');
 port=8081;
 // // Create an instance of express
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));  // Parsing Form Data
+app.use(bodyParser.json());  // Parsing JSON data
 app.use(express.json());
 app.use(express.static('public'));
 app.use(cors()); // Enable CORS for the frontend React app
@@ -23,7 +27,6 @@ app.get('/', (req, res) => {
 //     // Respond with a JSON message
 return res.json("From backend side");
 });
-// Define a route to fetch locations based on town or city name 
 // Define a route to fetch locations based on town or city name
 app.get('/search', (req, res) => {
     const cityTerm = req.query.city || ''; // Get the city search term from query parameters
@@ -34,6 +37,20 @@ app.get('/search', (req, res) => {
             return res.status(500).json({ error: 'Internal server error' });
         }
         return res.json(results); // Return the query results as JSON
+    });
+});
+
+app.post('/register', (req, res) => {
+    const { fname, lname, location, event_name } = req.body;
+    const sql = `INSERT INTO event_registration (fname, lname, location, event_name) VALUES (?, ?, ?, ?)`;
+
+    db.query(sql, [fname, lname, location, event_name], (err, results) => {
+        if (err) {
+            console.error('Failed to insert data:', err);
+            res.status(500).send('Error saving registration');
+            return;
+        }
+        res.send('Registration successful. Thank you for registering!');
     });
 });
 

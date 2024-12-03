@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
         <link href="styles.css" rel="stylesheet" />
+        <link href="/DBFinalProject/cssFiles/create_account.css" rel="stylesheet" />
         
     </head>
     <body>
@@ -45,7 +46,7 @@
                                 <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/cold_drinks.html">Cold Drinks</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/account_info.html">Account Information</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/account_info.html">Sign In</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/location.html">Location</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/events.html">Events</a></li>
                     </ul>
@@ -62,26 +63,46 @@
     <header>
         <script src="search.js"></script><!-- connected with search.js -->
     </header>
+
+
+<!--Sign Up Table-->
+<table align=center id="t2"
+    <tr><td>
+        <br>
+        <div>
 <form action="index.php" method="POST" align="center">
-    
-    <label for="username">username:</label>
+    <b align=center style="color:rgb(73,54,40); font-family:verdana; font-size: 30pt">Create Account</b>
+
+    <br>
+    <br>
+    <label for="username">Username: </label>
     <input type="text" id="username" placeholder="Username" minlength="6" maxlength="20" required>
-    <br>
-    <label for="password">password:</label>
-    <input type="password" id="password" placeholder="Password" minlength="6" maxlength="20" required>
-    <br>
 
-    <label for=""email>email:</label>
-    <input type="email" id="email" placeholder="email"><br>
+    <br>
+    <br>
+    <label for=""email>Email: </label>
+    <input type="email" id="upemail" placeholder="deare@example.com"><br>
 
-    <label for="phone">phone #:</label>
+    <br>
+    <br>
+    <label for="password">Password: </label>
+    <input type="password" id="uppassword" placeholder="********" minlength="6" maxlength="20" required>
+    <br>
+    <br>
+    <label for="phone">Phone #: </label>
     <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-   
-    <label for="bday">birthdate:</label>
+    <br>
+    <br>
+    <label for="bday">Birthdate: </label>
     <input type="date" id="bday"><br>
-
-    <input type="reset"><br>
+    <br>
+    <br>
     
-    <input type="submit">
+    <button type="submit" id="submitbtn"> Sign Up</button>
 
-</form>
+    </form>
+    </div>
+    </td></tr>
+    </table>
+</body>
+</html>
