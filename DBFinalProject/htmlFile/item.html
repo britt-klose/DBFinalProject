@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+</head>
+<body>
+
+    <div id="item-container"></div> <!-- Container for displaying item details -->
+
+    <script>
+        // Sample menu data (same as in script.js)
+        const menuItems = [
+            { id: 1, name: 'Espresso', description: 'Strong coffee made by forcing steam through ground coffee beans.', price: 2.5, image: 'espresso.jpg' },
+            { id: 2, name: 'Cappuccino', description: 'Espresso with steamed milk and a layer of foam.', price: 3.5, image: 'cappuccino.jpg' },
+            { id: 3, name: 'Latte', description: 'Espresso with steamed milk and a thin layer of foam.', price: 3.0, image: 'latte.jpg' },
+            // Add more items as needed
+        ];
+
+        // Get the item id from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemId = parseInt(urlParams.get('id'), 10);
+
+        // Find the item based on the ID
+        const item = menuItems.find(i => i.id === itemId);
+
+        if (item) {
+            const itemContainer = document.getElementById('item-container');
+            itemContainer.innerHTML = `
+                <h1>${item.name}</h1>
+                <img src="${item.image}" alt="${item.name}">
+                <p>${item.description}</p>
+                <p>$${item.price}</p>
+            `;
+        } else {
+            document.getElementById('item-container').innerHTML = '<p>Item not found.</p>';
+        }
+    </script>
+
+</body>
+</html>
