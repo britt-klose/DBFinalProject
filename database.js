@@ -148,12 +148,21 @@ app.get('/hotdrinks', (req, res) => {
 });
 
 // Get Create Account:
+app.get('/create_account', function (req, res) {
+    res.render('create_account')
+})
 app.post('/create_account', async(req, res) => {
-    res.render('/createaccount')
-});
+    const user = await UserActivation.create({
+        email: req.body.username,
+        password: req.body.password
+    });
 
-app.post('/login', (req, res) => {
-    res.render("login")
+    return res.status(500).json(user);
+    });
+
+// Login
+app.post('/account_info', (req, res) => {
+    res.render("account_info")
 });
 
 //Authenticate Login Information
@@ -163,48 +172,38 @@ const bcrypt = require("bcryptjs")
 app.use(express.urlencoded({extended: 'false'}))
 
 
-// Login To Account
-app.post('/createaccount', (req, res) => {    
-    const {username, email, password, password_confirm } = req.body
+// Retrieve Account Info
+app.post('/auth/createaccount', (req, res) => {    
+    const {email, password} = req.body
 
-    db.query('SELECT email FROM customers WHERE email = ?', [email], async (error, ress) => {
+    db.query('SELECT email FROM customers WHERE email = ?', [email], async (error, res) => {
         if(error){
             console.log(error)
         }
         if( result.length > 0 ) {
-            return res.render('/createaccount', {
+            return res.render('/create_account', {
                 message: 'This email is already in use'
             })
         } else if(password !== password_confirm) {
-            return res.render('createaccount', {
+            return res.render('create_account', {
                 message: 'Passwords do not match!'
             })
         }
 
         let hashedPassword = await bcrypt.hash(password, 8)
 
-        db.query('INSERT INTO users SET?', {username: username, email: email, password: password}, (err, res) => {
+        db.query('INSERT INTO users SET?', {email: email, password: password}, (err, res) => {
             if(error) {
                 console.log(error)
             } else {
-                return res.render('register', {
+                return res.render('create_account', {
                     message: 'User Registered!'
                 })
             }
         })
     })
 })
-//This API will get all the product information from the database 
-//and return it to the front end.
-app.get('/allitems', (req, res) => {
-    const sql = "SELECT name, price, calories, description, url FROM items";
-    db.query(sql, (err, result) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
-        res.json(result);
-    });
-});
+
 
 //This API receives the product ID and user ID 
 //and adds the product to the cart table database.

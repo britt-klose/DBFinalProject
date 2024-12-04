@@ -16,7 +16,35 @@
         <link href="/DBFinalProject/cssFiles/styles.css" rel="stylesheet" />
         <link href="/DBFinalProject/cssFiles/location.css" rel="stylesheet" />
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    </head>
+        <style>
+            /* 在这里添加内联CSS */
+            #productDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 保证两边对齐，中间间距均匀 */
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 帮助内容垂直分布 */
+    flex: 1 1 48%; /* 设置宽度以使得一行只显示两个 */
+    margin-bottom: 20px; /* 添加底部间距 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 可选的阴影效果 */
+    border: 1px solid #ccc; /* 可选的边框 */
+    padding: 5px; /* 内边距 */
+    min-height: 200px; /* 设置一个最小高度 */
+}
+
+.product-item p {
+    margin: 0 0 10px 0; /* 优化段落间距 */
+}
+
+.product-item button {
+    margin-top: auto; /* 将按钮推到底部 */
+    padding: 5px 10px; /* 按钮填充 */
+}
+        </style>
     <body>
          <!-- Navigation-->
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,10 +73,9 @@
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/location.html">Location</a></li>
                     </ul>
                     <form class="d-flex">
-                      <a href="http://127.0.0.1:5501/DBFinalProject/htmlFile/shopping_cart.html" class="btn btn-outline-dark">
+                      <a href="http://127.0.0.1:5501/DBFinalProject/htmlFile/locationForOrder.html" class="btn btn-outline-dark">
                         Cart
                         <i class="bi-cart-fill me-1"></i>
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                     </a>
                     </form>
                 </div>
@@ -70,9 +97,20 @@
                 Start Order
             </label>
         </section> 
-        <main>
-            <section id="itemsContainer" class="row"></section>
-        </main>
+        <body>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Product Display Area -->
+                    <div id="productDisplay" class="col-md-8"></div>
+        
+                    <!-- Shopping Cart Display Area -->
+                    <div id="cartDisplay" class="col-md-4">
+                        <h2>Your Cart</h2>
+                        <ul id="cartItems"></ul> <!-- he items in the shopping cart will be displayed here -->
+                    </div>
+                </div>  
+            </div>
+        </body>
                 <!-- Footer-->
                 <footer class="py-5 bg-dark">
                     <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Database Final Project 2024</p> 
