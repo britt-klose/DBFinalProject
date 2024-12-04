@@ -25,29 +25,32 @@
 //             console.error('Error fetching menu items:', error);
 //         });
 // });
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('http://localhost:8081/items')
-    .then(response => response.json())
-    .then(data => displayItems(data))
-    .catch(error => console.error('Error fetching items:', error));
-});
 
-function displayItems(items) {
-    const container = document.getElementById('itemsContainer');
-    items.forEach(item => {
-        const itemHTML = `
-            <div class="col mb-5">
-                <div class="card h-100">
-                    <img class="card-img-top" src="${item.url}" alt="${item.name}" />
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="fw-bolder" title="${item.description}  ${item.calories} Calories">${item.name}</h5>
-                            ${item.price}
-                        </div>
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"></div>
-                </div>
-            </div>`;
-        container.innerHTML += itemHTML;
-    });
-}
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     fetch('http://localhost:8081/items')
+//     .then(response => response.json())
+//     .then(data => displayItems(data))
+//     .catch(error => console.error('Error fetching items:', error));
+// });
+
+// function displayItems(items) {
+//     const container = document.getElementById('itemsContainer');
+//     items.forEach(item => {
+//         const itemHTML = `
+//             <div class="col mb-5">
+//                 <div class="card h-100">
+//                     <img class="card-img-top" src="${item.url}" alt="${item.name}" />
+//                     <div class="card-body p-4">
+//                         <div class="text-center">
+//                             <h5 class="fw-bolder" title="${item.description}  ${item.calories} Calories">${item.name}</h5>
+//                             ${item.price}
+//                         </div>
+//                     </div>
+//                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"></div>
+//                 </div>
+//             </div>`;
+//         container.innerHTML += itemHTML;
+//     });
+// }
+

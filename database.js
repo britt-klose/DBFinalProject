@@ -147,10 +147,9 @@ app.get('/hotdrinks', (req, res) => {
     });
 });
 
-// Get create account:
-app.post('/create_account', (req, res) => {
-    const sql= "Alter table"
-    res.render("create_account")
+// Get Create Account:
+app.post('/create_account', async(req, res) => {
+    res.render('/createaccount')
 });
 
 app.post('/login', (req, res) => {
@@ -184,7 +183,7 @@ app.post('/createaccount', (req, res) => {
 
         let hashedPassword = await bcrypt.hash(password, 8)
 
-        db.query('INSERT INTO users SET?', {username: username, email: email, password}, (err, res) => {
+        db.query('INSERT INTO users SET?', {username: username, email: email, password: password}, (err, res) => {
             if(error) {
                 console.log(error)
             } else {
@@ -193,9 +192,47 @@ app.post('/createaccount', (req, res) => {
                 })
             }
         })
-     })
+    })
 })
+//This API will get all the product information from the database 
+//and return it to the front end.
+app.get('/allitems', (req, res) => {
+    const sql = "SELECT name, price, calories, description, url FROM items";
+    db.query(sql, (err, result) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json(result);
+    });
+});
 
+//This API receives the product ID and user ID 
+//and adds the product to the cart table database.
+app.post('/addToCart', (req, res) => {
+    const { productId, userId } = req.body;
+    const sql = "INSERT INTO cart (item_name, item_price, quantity) VALUES (?, ?, 1) ON DUPLICATE KEY UPDATE quantity = quantity + 1";
+});
+
+app.post('/CartQuantity', (req, res) => {
+    const { cartId, quantity } = req.body;
+    if (quantity > 0) {
+        const sql = "UPDATE cart SET quantity = ? WHERE cartID = ?";
+        db.query(sql, [quantity, cartId], (err, result) => {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            res.json({ message: 'Cart updated' });
+        });
+    } else {
+        const sql = "DELETE FROM cart WHERE cartID = ?";
+        db.query(sql, [cartId], (err, result) => {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            res.json({ message: 'Item removed from cart' });
+        });
+    }
+});
 //Port
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
