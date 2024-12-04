@@ -68,15 +68,12 @@
         <br>
         <div>
         <FORM NAME="mydbform"
-            ACTION="show.php"
-            METHOD="get">
-
+            ACTION="http:/localhost:8081/create_account" METHOD="GET">
             <b align=center style="color:rgb(73,54,40); font-family:verdana; font-size: 30pt">Login</b>
             <br><br>
             Email:
             <input type="email" id="email" placeholder="bklose@example.com" required><br>
             <br>
-
             Password:
             <input type="password" id="password" placeholder="*******" minlength="6" maxlength="20" required> <br>
             <br><br>
@@ -92,6 +89,8 @@
         </div>
         </td></tr>
         </table>
+         <!-- Bootstrap core JS-->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
 

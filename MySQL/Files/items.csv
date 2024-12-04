@@ -1,30 +1,30 @@
-item_id,name,price,calories,category,description
-1,Select Broccoli cheddar,8.99,360,soup,"Chopped broccoli, shredded carrots, and savory seasonings simmered in a smooth cheese sauce."
-2,Distinctly Chicken Soup,8.99,290,soup,"Our classic chicken soup includes carrots, celery, and egg noodles in a homemade broth."
-3,Query chowder,8.89,330,soup,"Chow down on this chowder. Includes clams, chunks of potato, onions, and pork."
-4,Just bacon & Swiss ON rye,12.19,870,sandwich,"Crispy bacon, sliced swiss, mayo, lettuce and pepper on toasted rye bread. "
-5,GAN Club,13.39,900,sandwich,"Angus beef, provolone cheese nestled closely together on ciabatta toast spread with garlic aioli."
-6,Overfit this panini,12.19,890,sandwich,"Melted mozzarella, vine ripened tomatoes, fresh basil, and romaine lettuce on ciabatta bread with balsamic glaze and garlic aioli drizzle. "
-7,Unique club,8.39,750,sandwich,"Good old honey baked turkey, american sliced cheese, tomato, lettuce and mayo on a focaccia bread. "
-8,Slopey joe,10.19,1130,sandwich,"Ground beef, onion, and tomato sauce served on a hamburger bun. "
-9,Caesar Sesame Salad,11.99,540,salad,Sesame stick croutons and sesame oil caesar dressing add a twist to the classic caesar salad. 
-10,Stress Final Salad,"2,500",650,salad,This brain boosting salad includes blueberries and walnuts served over a bed of spring mix with a berry vinaigrette. **Included with this salad is one ticket to skip finals week** All SALES FINAL
-11,Ascii bowl,8.99,440,salad,"Pureed berries served in a bowl and topped with granola, bananas, and blueberries."
-12,Diced Apples with Tuscan Apple Dressing,11.99,550,salad,"Arugula, pecans, and apples served with a tangy tuscan apple dressing. "
-13,Dimensional Chicken Salad,13.49,660,salad,2 styles of chicken salad served with crackers. 
-14,Hidden Layer Cake,8.9,870,bakery,Tiered vanilla cake with a hidden layer of strawberry jam. 
-15,Grayscale Cookie,3.39,450,bakery,Our spin on a traditional black and white cookie with frosting that gradually goes from light to dark. 
-16,RBG Brownie,3.89,470,bakery,Fudgy brownies made with semisweet chocolate chunks 
-17,Ascending Chocolate Macaroon,1.99,190,bakery,Chocolate and shredded coconut are the stars of this chewy treat.
-18,Apple Strudel Version 8.0,4.19,480,bakery,"Fresh apples, cinnamon, and sugar wrapped in a warm puff pastry. "
-19,GPTea ,3.75,0,hot_drink,Green Tea with a hint of spearmint. 
-20,Latent Chai Spice,6.25,230,hot_drink,Cinnamon and clove infused black tea combined with steamed milk. 
-21,Layered Latte,6.5,330,hot_drink,Espresso balanced with steamed milk and a light layer of foam.
-22,Convolutional Cappuccino,6.5,130,hot_drink,Rich espresso under a layer of thick milk foam. 
-23,Softmax Macchiato,6.5,350,hot_drink,Freshly steamed milk marked with espresso and topped with a caramel drizzle.
-24,Homebrew Coffee,3.75,5,hot_drink,Our classic freshly brewed medium roast coffee.
-25,Filtered Coffee,3.75,5,hot_drink,Full-bodied dark roast coffee.
-26,Max Pool Lemonade,5.5,220,cold_drink,Refreshing Lemonade with a lemon garnish. 
-27,MangoDB Iced Tea,5.5,20,cold_drink,Black tea shaken with mango puree. 
-28,Install Cold Brew,7.25,5,cold_drink,Slow-steeped in cool water for 20 hours for a super smooth flavor.
-29,Coffee Forouraghi-ccino,6.5,350,cold_drink,"Roasted coffee, ice, and milk blended beverage."
+item_id,name,price,calories,category,description,url
+1,Select Broccoli cheddar,8.99,360,soup,"Chopped broccoli, shredded carrots, and savory seasonings simmered in a smooth cheese sauce.",/img/itemimgs/select_broccoli_cheddar.jpg
+2,Distinctly Chicken Soup,8.99,290,soup,"Sweet caramelized onions in a savory broth with a sherry wine vinegar gastrique, topped with cheese and savory sourdough bread.",/img/itemimgs/distinctly_chicken_soup.jpg
+3,Query chowder,8.89,330,soup,"Chow down on this chowder. Includes clams, chunks of potato, onions, and pork.",/img/itemimgs/query_chowder.jpg
+4,Just bacon & Swiss ON rye,12.19,870,sandwich,"Crispy bacon, sliced swiss, mayo, lettuce and pepper on toasted rye bread.",/img/itemimgs/just_bacon_&_swiss_on_rye.jpg
+5,GAN Club,13.39,900,sandwich,"Angus beef, provolone cheese nestled closely together on ciabatta toast spread with garlic aioli.",/img/itemimgs/gan_club.jpg
+6,Overfit this panini,12.19,890,sandwich,"Melted mozzarella, vine ripened tomatoes, fresh basil, and romaine lettuce on ciabatta bread with balsamic glaze and garlic aioli drizzle.",/img/itemimgs/overfit_this_panini.jpg
+7,Unique club,8.39,750,sandwich,"Good old honey baked turkey, american sliced cheese, tomato, lettuce and mayo on a focaccia bread.",/img/itemimgs/unique_club.jpg
+8,Slopey joe,10.19,1130,sandwich,"Ground beef, onion, and tomato sauce served on a hamburger bun.",/img/itemimgs/slopey_joe.jpg
+9,Caesar Sesame Salad,11.99,540,salad,Sesame stick croutons and sesame oil caesar dressing add a twist to the classic caesar salad.,/img/itemimgs/caesar_sesame_salad.jpg
+10,Stress Final Salad,"2,500",650,salad,This brain boosting salad includes blueberries and walnuts served over a bed of spring mix with a berry vinaigrette. **Included with this salad is one ticket to skip finals week** All SALES FINAL,/img/itemimgs/stress_final_salad.jpg
+11,Ascii bowl,8.99,440,salad,"Pureed berries served in a bowl and topped with granola, bananas, and blueberries.",/img/itemimgs/ascii_bowl.jpg
+12,Diced Apples with Tuscan Apple Dressing,11.99,550,salad,"Arugula, pecans, and apples served with a tangy tuscan apple dressing.",/img/itemimgs/diced_apples_with_tuscan_apple_dressing.jpg
+13,Dimensional Chicken Salad,13.49,660,salad,2 styles of chicken salad served with crackers.,/img/itemimgs/dimensional_chicken_salad.jpg
+14,Hidden Layer Cake,8.9,870,bakery,Tiered vanilla cake with a hidden layer of strawberry jam.,/img/itemimgs/hidden_layer_cake.jpg
+15,Grayscale Cookie,3.39,450,bakery,Our spin on a traditional black and white cookie with frosting that gradually goes from light to dark.,/img/itemimgs/grayscale_cookie.jpg
+16,RBG Brownie,3.89,470,bakery,Fudgy brownies made with semisweet chocolate chunks,/img/itemimgs/RGB_brownie.jpg
+17,Ascending Chocolate Macaroon,1.99,190,bakery,Chocolate and shredded coconut are the stars of this chewy treat.,/img/itemimgs/ascending_chocolate_macaroon.jpg
+18,Apple Strudel Version 8.0,4.19,480,bakery,"Fresh apples, cinnamon, and sugar wrapped in a warm puff pastry.",/img/itemimgs/apple_strudel_version.jpg
+19,GPTea,3.75,0,hot_drink,Green Tea with a hint of spearmint.,/img/itemimgs/gptea.jpg
+20,Latent Chai Spice,6.25,230,hot_drink,Cinnamon and clove infused black tea combined with steamed milk.,/img/itemimgs/latent_chai_spice.jpg
+21,Layered Latte,6.5,330,hot_drink,Espresso balanced with steamed milk and a light layer of foam.,/img/itemimgs/layered_latte.jpg
+22,Convolutional Cappuccino,6.5,130,hot_drink,Rich espresso under a layer of thick milk foam.,/img/itemimgs/convolutional_cappucino.jpg
+23,Softmax Macchiato,6.5,350,hot_drink,Freshly steamed milk marked with espresso and topped with a caramel drizzle.,/img/itemimgs/softmax_macchiato.jpg
+24,Homebrew Coffee,3.75,5,hot_drink,Our classic freshly brewed medium roast coffee.,/img/itemimgs/homebrew_coffee_filtered_coffee.jpg
+25,Filtered Coffee,3.75,5,hot_drink,Full-bodied dark roast coffee.,/img/itemimgs/homebrew_coffee_filtered_coffee.jpg
+26,Max Pool Lemonade,5.5,220,cold_drink,Refreshing Lemonade with a lemon garnish.,/img/itemimgs/max_pool_lemonade.jpg
+27,MangoDB Iced Tea,5.5,20,cold_drink,Black tea shaken with mango puree.,/img/itemimgs/mangodb_iced_tea.jpg
+28,Install Cold Brew,7.25,5,cold_drink,Slow-steeped in cool water for 20 hours for a super smooth flavor.,/img/itemimgs/install_cold_brew.jpg
+29,Coffee Forouraghi-ccino,6.5,350,cold_drink,"Roasted coffee, ice, and milk blended beverage.",/img/itemimgs/install_cold_brew.jpg 

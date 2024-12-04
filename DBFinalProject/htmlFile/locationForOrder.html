@@ -61,74 +61,24 @@
         <header  class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder"> Select a Location </h1>
+                    <h1 class="display-4 fw-bolder"> Start your order from here! </h1>
                 </div>
             </div>
         </header>
         <section>
             <label for="searchInput">
-                Search Your City
+                Start Order
             </label>
-            <form>
-                <!-- Corrected the usage of Font Awesome icon -->
-                <div style="position: relative; display: inline-block;">
-                    <i class="fas fa-search" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);"></i>
-                    <input type="text" id="searchInput" placeholder="Enter city name..." style="padding-left: 30px;">
-                </div>
-                <button type="button" onclick="searchLocations()">Search</button>
-                <div id="results"></div>
-            </form>
-        </section>
+        </section> 
         <main>
-            <section class="locations">
-                <!-- Location 1-->
-                <article class="location" data-city="Philadelphia">
-                    <img src="/img/locationimgs/Philadelphia.jpg" alt="Java Cafe Interior: Philadelphia" width="200" height="150">
-                    <h2>Java Cafe - East </h2>
-                    <p>1306 Dickinson Street <br> Philadelphia, PA 19147 </p>
-                </article>
-
-                <!-- Location 2-->    
-                <article class="location" data-city="Cherry Hill">
-                    <img src="/img/itemimgs/download.jpg" alt="Java Cafe Interior: New Jersey" width="200" height="150">
-                    <h2>Java Cafe - Suburb </h2>
-                    <p>606 Haddonfield Road <br> Cherry Hill, NJ 8002</p>
-                </article>
-
-                <!-- Location 3-->    
-                <article class="location" data-city="Tampa">
-                    <img src="/img/locationimgs/Florida.jpg" alt="Java Cafe Interior: Florida" width="200" height="150">
-                    <h2>Java Cafe - Beach</h2>
-                    <p>901 S Howard Avenue <br> Tampa, FL 33606</p>
-                </article>
-                <!-- Location 4-->   
-                <article class="location" data-city="Ocean City">
-                    <img src="/img/locationimgs/Maryland.jpg" alt="Java Cafe Interior: Maryland" width="200" height="150">
-                    <h2>Java Cafe - Boardwalk</h2>
-                    <p>12611 Ocean Gateway <br> Ocean City, MD 21842</p>                    
-                </article>
-
-                <!-- Location 5-->
-                <article class="location" data-city="Kauai">
-                    <img src="/img/locationimgs/Hawaii.jpg" alt="Java Cafe Interior: Hawaii" width="200" height="150">
-                    <h2>Java Cafe - Beach</h2>
-                    <p>870 Halewii Road <br> Kauai, HI 96741</p>    
-                </article>
-
-
+            <section id="itemsContainer" class="row"></section>
         </main>
-            <!-- View Menu-->
-            <a href="http://127.0.0.1:5501/DBFinalProject/htmlFile/menu.html">
-                <button>View Menu</button>
-            </a>
-
-            </section> 
                 <!-- Footer-->
                 <footer class="py-5 bg-dark">
                     <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Database Final Project 2024</p> 
                     </div>
                 </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="/DBFinalProject/jspages/location.js"></script>
+        <script src="/DBFinalProject/jspages/view.js"></script>
     </body>
     </html>
