@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const productDisplay = document.getElementById('productDisplay');
     const cartItems = document.getElementById('cartItems');
+    const totalPriceElement = document.getElementById('totalPrice'); // Total price
 
 // 显示产品到DOM中
 function displayProducts() {
@@ -62,6 +63,7 @@ function displayProducts() {
             cart.push({...product, quantity: 1});
         }
         displayCart();
+        updateTotalPrice();
     };
 
     // Update Shopping Cart Display
@@ -89,8 +91,19 @@ function displayProducts() {
             cart = cart.filter(p => p.id !== productId);
         }
         displayCart();
+        updateTotalPrice();
     };
 
+    function updateTotalPrice() {
+        let total = 0;
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+        });
+        totalPriceElement.textContent = total.toFixed(2);
+    }
+    
     // Initial Display Product
     displayProducts();
 });
+
+

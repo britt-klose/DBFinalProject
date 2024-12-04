@@ -147,64 +147,59 @@ app.get('/hotdrinks', (req, res) => {
     });
 });
 
-// Get Create Account:
-app.get('/create_account', function (req, res) {
-    res.render('create_account')
-})
-app.post('/create_account', async(req, res) => {
-    const user = await UserActivation.create({
-        email: req.body.username,
-        password: req.body.password
-    });
 
-    return res.status(500).json(user);
-    });
-
-// Login
-app.post('/account_info', (req, res) => {
-    res.render("account_info")
-});
-
-//Authenticate Login Information
+//Create Account
 //Encrpyt using Password hashing algorithm
 const bcrypt = require("bcryptjs")
 
 app.use(express.urlencoded({extended: 'false'}))
+app.use(express.json())
 
+app.post('/create_account', async(req, res) => {   
 
-// Retrieve Account Info
-app.post('/auth/createaccount', (req, res) => {    
-    const {email, password} = req.body
+const username = req.body.name;
+const password = await bcrypt.hash(req.body.password,10);
 
-    db.query('SELECT email FROM customers WHERE email = ?', [email], async (error, res) => {
-        if(error){
-            console.log(error)
-        }
-        if( result.length > 0 ) {
-            return res.render('/create_account', {
-                message: 'This email is already in use'
-            })
-        } else if(password !== password_confirm) {
-            return res.render('create_account', {
-                message: 'Passwords do not match!'
-            })
-        }
+db.getConnection(async(err, connection) => {
 
-        let hashedPassword = await bcrypt.hash(password, 8)
+        if (err) throw (err)
+        
+        const sqlSearch= "SELECT email, password from customers where user = ?"
+        const search_query = mysql.format(sqlSearch,[email])
 
-        db.query('INSERT INTO users SET?', {email: email, password: password}, (err, res) => {
-            if(error) {
-                console.log(error)
-            } else {
-                return res.render('create_account', {
-                    message: 'User Registered!'
-                })
+        const sqlInsert = "INSERT INTO customers VALUES (0,?,?)"
+        const insert_query = mysql.format(sqlInsert,[email, password])
+
+        await connection.query (search_query, async(err, result)=> {
+
+            if(err) throw(err)
+            console.log("-----> Search Results")
+            console.log(result.length)
+
+            if (result.length != 0) {
+                connection.release()
+                console.log("-----> User already exists")
+                res.sendStatus(409)
             }
+            else {
+                await connection.query (insert_query, (err, results)=> {
+                
+                connection.release()
+
+            if(err) throw(err)
+            console.log ("------> Created new User")
+            console.log(result.insertId)
+            res.sendStatus(201)    
+            })
+        }
         })
-    })
-})
+        })
+        })
 
 
+
+
+  
 //This API receives the product ID and user ID 
 //and adds the product to the cart table database.
 app.post('/addToCart', (req, res) => {
