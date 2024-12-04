@@ -66,113 +66,101 @@ app.get('/', (req, res) => {
 //Encrpyt using Password hashing algorithm
 //const bcrypt = require("bcryptjs")
 
-app.use(express.urlencoded({extended: 'false'}))
-app.use(express.json())
+// app.use(express.urlencoded({extended: 'false'}))
+// app.use(express.json())
 
-app.post('/create_account', async(req, res) => {   
+// app.post('/create_account', async(req, res) => {   
 
-const email = req.body.name;
-const Hashedpassword = await bcrypt.hash(req.body.password,10);
+// const {email, password} = req.body.name;
+// const Hashedpassword = await bcrypt.hash(req.body.password,10);
 
-db.getConnection(async(err, connection) => {
+//
+//       const sqlSearch= "SELECT email, password from customers where email = ?"
+//         const search_query = mysql.format(sqlSearch,[email])
 
-        if (err) throw (err)
-        
-        const sqlSearch= "SELECT email, password from customers where email = ?"
-        const search_query = mysql.format(sqlSearch,[email])
+//         const sqlInsert = "INSERT INTO customers VALUES (0,?,?)"
+//         const insert_query = mysql.format(sqlInsert,[email, Hashedpassword])
 
-        const sqlInsert = "INSERT INTO customers VALUES (0,?,?)"
-        const insert_query = mysql.format(sqlInsert,[email, Hashedpassword])
+//         await connection.query (search_query, async(err, result)=> {
 
-        await connection.query (search_query, async(err, result)=> {
+//             if(err) throw(err)
+//             console.log("-----> Search Results")
+//             console.log(result.length)
 
-            if(err) throw(err)
-            console.log("-----> Search Results")
-            console.log(result.length)
-
-            if (result.length != 0) {
-                connection.release()
-                console.log("-----> User already exists")
-                res.sendStatus(409)
-            }
-            else {
-                await connection.query (insert_query, (err, results)=> {
+//             if (result.length != 0) {
+//                 connection.release()
+//                 console.log("-----> User already exists")
+//                 res.sendStatus(409)
+//             }
+//             else {
+//                 await connection.query (insert_query, (err, results)=> {
                 
-                connection.release()
+//                 connection.release()
 
-            if(err) throw(err)
-            console.log ("------> Created new User")
-            console.log(result.insertId)
-            res.sendStatus(201)    
-            })
-        }
-        })
-        })
-        })
+//             if(err) throw(err)
+//             console.log ("------> Created new User")
+//             console.log(result.insertId)
+//             res.sendStatus(201)    
+//             })
+//         }
+//         })
+//         })
+//         })
 
-// Login 
-app.post('/account_info', (req, res)=> {
+// // Login 
+// app.post('/account_info', (req, res)=> {
     
-const email = req.body.name
-const password = req.body.password
+// const email = req.body.name
+// const password = req.body.password
 
-db.getConnection (async(err,connection)=> {
+// // db.getConnection (async(err,connection)=> {
 
-    if(err) throw(err)
-    const sqlSearch = "Select email, password from customers where email = ?"
-    const search_query = sql.fomrat(sqlSearch, [email])
+//     if(err) throw(err)
+//     const sqlSearch = "Select email, password from customers where email = ?"
+//     const search_query = sql.fomrat(sqlSearch, [email])
 
-    await conenction.query (search_query, async (err, result) => {
+//     await connection.query (search_query, async (err, result) => {
 
-        connection.release()
+//         connection.release()
 
-        if(err) throw(err)
+//         if(err) throw(err)
     
-        if(result.length ==0) {
-            console.log("------> User does not exist")
-        }
-        else {
-            const hashedPassword = result[0].password
+//         if(result.length ==0) {
+//             console.log("------> User does not exist")
+//         }
+//         else {
+//             const hashedPassword = result[0].password
 
-            if(await bycrypt.compare(password, hashedPassword)) {
-            console.log("-------> Login Successful")
-            res.send('${email} is logged in!')
-            }
-            else {
-            console.log("----------> Password Incorrect")
-            res.send("Password incorrect!")
-            } 
-        }
-    })
-    })
-})
+//             if(await bycrypt.compare(password, hashedPassword)) {
+//             console.log("-------> Login Successful")
+//             res.send('${email} is logged in!')
+//             }
+//             else {
+//             console.log("----------> Password Incorrect")
+//             res.send("Password incorrect!")
+//             } 
+//         }
+//     })
+//     })
+// })
 
-//This API receives the product ID and user ID 
-//and adds the product to the cart table database.
-// API to decrease the quantity of a product in the cart
+// Route to handle POST request
+// this is for update password
 
-app.post('/decreaseQuantity', (req, res) => {
-    const { productId } = req.body;
-    const sql = `UPDATE cart SET quantity = quantity - 1 WHERE cart_id = ? AND quantity > 1`;
-    db.query(sql, [productId], (err, result) => {
+app.post('/account_info', (req, res) => {
+    const { email, password } = req.body;
+    const sql = `UPDATE customers SET password = ? where email = ?`;
+    db.query(sql, [password, email], (err, result) => {
         if (err) {
             return res.status(500).json({ error: err.message });
         }
-        res.json({ message: 'Quantity decreased successfully', result });
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: 'Email not found' });
+        }
+        res.json({ message: 'Password updated successfully' });
     });
 });
 
-// API to increase the quantity of a product in the cart
-app.post('/increaseQuantity', (req, res) => {
-    const { productId } = req.body;
-    const sql = `UPDATE cart SET quantity = quantity + 1 WHERE cart_id = ?`;
-    db.query(sql, [productId], (err, result) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
-        res.json({ message: 'Quantity increased successfully', result });
-    });
-});
 
 //Port
 app.listen(port, () => {
