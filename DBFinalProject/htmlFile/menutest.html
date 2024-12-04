@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enjoy Our Delicious Coffee and Pastries at Cafe Java!" />
-    <meta name="Deare Abudushalamu, Brittany Klose, Katrina Cwiertniewicz," content="Cafe La Java" />
-    <title>Cafe La Java</title>
-    <link rel="stylesheet" href="DBFinalProject/styles.css"><!-- connected with style.css -->
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -19,10 +12,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      
+
         <link href="/DBFinalProject/cssFiles/styles.css" rel="stylesheet" />
-        <link href="/DBFinalProject/cssFiles/create_account.css" rel="stylesheet" />
-        
     </head>
     <body>
      <!-- Navigation-->
@@ -61,49 +52,53 @@
             </div>
         </div>
     </nav>
-    <header>
-        <script src="/DBFinalProject/jspages/search.js"></script><!-- connected with search.js -->
-    </header>
+        <header>
+            <script src="/DBFinalProject/jspages/search.js"></script><!-- connected with search.js -->
+        </header>
+            <!-- Header-->
+            <header class="bg-dark py-5">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-white">
+                        <h1 class="display-4 fw-bolder"> Menu</h1>
+                    </div>
+                </div>
+            </header>
+    <body>
+        <div id="menu-container">
+            
+        </div> <!-- Container to dynamically load menu items -->
 
-
-<!--Sign Up Table-->
-<table align=center id="t2"
-    <tr><td>
-        <br>
-        <div>
-<form action="index.php" method="POST" align="center">
-    <b align=center style="color:rgb(73,54,40); font-family:verdana; font-size: 30pt">Create Account</b>
-
-    <br>
-    <br>
-    <label for="username">Username: </label>
-    <input type="text" id="username" placeholder="Username" minlength="6" maxlength="20" required>
-
-    <br>
-    <br>
-    <label for=""email>Email: </label>
-    <input type="email" id="upemail" placeholder="deare@example.com"><br>
-
-    <br>
-    <br>
-    <label for="password">Password: </label>
-    <input type="password" id="uppassword" placeholder="********" minlength="6" maxlength="20" required>
-    <br>
-    <br>
-    <label for="phone">Phone #: </label>
-    <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-    <br>
-    <br>
-    <label for="bday">Birthdate: </label>
-    <input type="date" id="bday"><br>
-    <br>
-    <br>
-    
-    <button type="submit" id="submitbtn"> Sign Up</button>
-
-    </form>
+        <div style="background-color: rgb(171,136,109)"; padding: 50px;
+        <h2 align="center">Cafe Hours</h2>
+            <table border="1" align="center" style="background-color: black;">
+                <tr align="center" style="background-color: rgb(214,192,179); border: 1px rgb(73, 54, 40)">
+                    <th width="80">Sunday</th>
+                    <th width="80">Monday</th>
+                    <th width="80">Tuesday</th>
+                    <th width="80">Wednesday</th>
+                    <th width="80">Thursday</th>
+                    <th width="80">Friday</th>
+                    <th width="80">Saturday</th>
+                </tr>
+                <tr align="center" style="background-color: rgb(214,192,179); border: 1px rgb(73, 54, 40)">
+                <td>7am-4pm</td>
+                <td>Closed</td>
+                <td>7am-4pm</td>
+                <td>7am-4pm</td>
+                <td>7am-4pm</td>
+                <td>7am-5pm</td>
+                <td>7am-5pm</td>
+            </tr>
+        </table>
+        </div>
+ <!-- Footer-->
+ <footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Database Final Project 2024</p> 
     </div>
-    </td></tr>
-    </table>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/DBFinalProject/jspages/view.js"></script>
+
 </body>
 </html>
