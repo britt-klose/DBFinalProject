@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+    const submitOrderButton = document.getElementById('submitOrder');
     // Example item data
     let products = [
         { id: 1, name: "Select Broccoli cheddar", price: 8.99 },
@@ -101,7 +102,17 @@ function displayProducts() {
         });
         totalPriceElement.textContent = total.toFixed(2);
     }
-    
+
+    submitOrderButton.addEventListener('click', function() {
+        if (cart.length > 0) {
+            alert("Order submitted successfully!");
+            // Code to send data to the server can be added here
+            //if i have time i will add the sever sise code here
+        } else {
+            alert("Please add the items you wish to purchase to your shopping cart!");
+        }
+    });
+
     // Initial Display Product
     displayProducts();
 });
