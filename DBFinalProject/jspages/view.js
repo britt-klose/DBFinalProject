@@ -107,7 +107,7 @@ function displayProducts() {
         if (cart.length > 0) {
             alert("Order submitted successfully!");
             // Code to send data to the server can be added here
-            //if i have time i will add the sever sise code here
+            //if i have time i will add the sever side code here
         } else {
             alert("Please add the items you wish to purchase to your shopping cart!");
         }

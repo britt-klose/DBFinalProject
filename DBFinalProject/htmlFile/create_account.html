@@ -6,7 +6,7 @@
     <meta name="description" content="Enjoy Our Delicious Coffee and Pastries at Cafe Java!" />
     <meta name="Deare Abudushalamu, Brittany Klose, Katrina Cwiertniewicz," content="Cafe La Java" />
     <title>Cafe La Java</title>
-    <link rel="stylesheet" href="DBFinalProject/styles.css"><!-- connected with style.css -->
+    <link rel="stylesheet" href="/DBFinalProject/cssFiles/styles.css"><!-- connected with style.css -->
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -46,8 +46,7 @@
                             <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/cold_drinks.html">Cold Drinks</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/account_info.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/create_account.html">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/login.html">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/events.html">Events</a></li>
                     <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/location.html">Location</a></li>
                 </ul>
@@ -62,7 +61,7 @@
         </div>
     </nav>
     <header>
-        <script src="/DBFinalProject/jspages/search.js"></script><!-- connected with search.js -->
+       <!--<script src="/DBFinalProject/jspages/search.js"></script><!-- connected with search.js -->
     </header>
 
 
@@ -71,36 +70,40 @@
     <tr><td>
         <br>
         <div>
-<form name="account_sign_up" action="http://localhost:8081/create_account" method="POST" align="center">
+<form id="signup-form" name="signup-form"  method="POST" align="center">
     <b align=center style="color:rgb(73,54,40); font-family:verdana; font-size: 30pt">Create Account</b>
     <br>
+    <label for="customer_id">ID: </label>
+    <input type="number" id="customer_id" name="customer_id">
     <br>
-    <!--test
-    <label for="username">Username: </label>
-    <input type="text" id="username" placeholder="Username" minlength="6" maxlength="20" required>
-    -->
+    <br>
     <br>
     <br>
     <label for="email">Email: </label>
-    <input type="email" id="email" placeholder="deare@example.com"><br>
+    <input type="email" id="email" name="email" placeholder="deare@example.com">
+    <br>
+    <br>
+    <label for="username">Username: </label>
+    <input type="text" id="username" name="username" minlength="6" maxlength="20">
+    <br>
+    <br>
 
-    <br>
-    <br>
     <label for="password">Password: </label>
-    <input type="password" id="password" placeholder="********" minlength="6" maxlength="20" required>
+    <input type="password" id="password" name="password" placeholder="********" minlength="6" maxlength="20">
     <br>
     <br>
-    <!--test
-    <label for="phone">Phone #: </label>
-    <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+
+    <label for="password">Phone Number: </label>
+    <input type="tel" id="phone" name="phone" minlength="6" maxlength="20">
     <br>
     <br>
-    <label for="bday">Birthdate: </label>
-    <input type="date" id="birthdate"><br>
+
+    <label for="birthdate">Date of Birth: </label>
+    <input type="date" id="birthdate" name="birthdate" minlength="6" maxlength="20">
     <br>
     <br>
-    -->
-    <button type="submit" id="submit"> Sign Up</button>
+    
+    <button type="submit" id="submit">Sign Up</button>
 
     </form>
     <br>
@@ -111,5 +114,6 @@
     </table>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/DBFinalProject/jspages/signup.js"></script>
 </body>
 </html>

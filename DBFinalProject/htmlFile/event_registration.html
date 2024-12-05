@@ -39,7 +39,7 @@
                                 <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/cold_drinks.html">Cold Drinks</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/account_info.html">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/login.html">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/create_account.html">Sign Up</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/events.html">Events</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/location.html">Location</a></li>
@@ -101,10 +101,19 @@
                 <p>
                     <input type="submit" value="Submit Registration">
                     <br><br>
-                    <input type="button" value="Delete Registration">
                 </p>
             </fieldset>
         </form>
+        <form>
+            <div class="container mt-5">
+                <h2>Delete Registration</h2>
+                <div class="form-group">
+                    <label for="lname">Enter Last Name to Delete Registration:</label>
+                    <input type="text" id="lname" class="form-control">
+                    <button class="btn btn-danger mt-2" onclick="deleteRegistrationByLname()">Delete Registration</button>
+                </div>
+        </form>
+        <br>
     </div>
     </body>
         <!-- Cafe Hours -->
@@ -136,8 +145,9 @@
                 <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Database Final Project 2024</p> 
                 </div>
             </footer>
+
             <!-- Bootstrap core JS-->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-            
+             <script src="/DBFinalProject/jspages/deleteEvent.js"></script>
 </html>
 

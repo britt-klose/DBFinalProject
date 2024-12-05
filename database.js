@@ -1,10 +1,10 @@
 // Import required modules
-const express = require('express'); // Express framework for handling HTTP requests
-const bodyParser = require('body-parser');  // body-parser
-const mysql = require('mysql2'); // MySQL2 client for Node.js
-const cors = require('cors'); // For web security
+const express = require('express'); // Express framework for handling HTTP requests in node.js.
+const bodyParser = require('body-parser');  // body-parser that parses request bodies in JSON formats
+const mysql = require('mysql2'); // MySQL2 client for Node.js is for connect with database provide database interaction
+const cors = require('cors'); // For web security Used to maintain or relax cross-domain access restrictions.
+const { v4: uuidv4 } = require('uuid');// Universally Unique Identifier Generate unique identifiers
 
-//const {authMiddleware} = require('.auth.js');
 port=8081;
 // // Create an instance of express
 const app = express();
@@ -22,7 +22,7 @@ password: "123456", // Database password
 database: "cafe" // Name of the database
 });
 
-// connect to the database
+// Attempt to establish a connection to the MySQL database.
 db.connect(function(err) {
     if (err)
         throw err;
@@ -30,26 +30,39 @@ db.connect(function(err) {
 });
 
 // // Define a route for the root URL '/'
+// This callback function handles GET requests to the root URL.
+// 'req' is the request object, containing all the information about the request made to the server.
+// 'res' is the response object, used to send back the desired HTTP response to the client.
 app.get('/', (req, res) => {
     // Respond with a JSON message
-    return res.json("From backend side");
+    return res.json("From backend side");// Send a response in JSON format.
     });
 
-    // Define a route to fetch locations based on town or city name
+    // Define a route to fetch locations based on city name
     app.get('/search', (req, res) => {
+         // The route handles GET requests to the "/search" endpoint.
         const cityTerm = req.query.city || ''; // Get the city search term from query parameters
         const sql = `SELECT location_address, town_city, state, zipcode, image_url FROM locations WHERE town_city LIKE ?`; // SQL query to search locations by city
+        // The '?' is a placeholder for a parameter value that will be provided in the execution of this query.
         db.query(sql, [`%${cityTerm}%`], (err, results) => { // Use a parameterized query to prevent SQL injection
             if (err) {
+                // If an error occurs during the database query, log the error and return a 500 Internal Server Error response.
                 console.error('Failed to execute query:', err);
                 return res.status(500).json({ error: 'Internal server error' });
             }
-            return res.json(results); // Return the query results as JSON
+            // Return the query results as JSON
+            return res.json(results); // Sends the results of the query back to the client as JSON.
         });
     });
-    
+
+    ////event registration
+
+    // Define an endpoint to handle POST requests to '/register'
+    // It is designed to handle the form submissions for event registration.
     app.post('/register', (req, res) => {
+        //put necessary fields of table to the request body
         const { fname, lname, location, event_name } = req.body;
+        //// insert the registration data into the 'event_registration' table
         const sql = `INSERT INTO event_registration (fname, lname, location, event_name) VALUES (?, ?, ?, ?)`;
     
         db.query(sql, [fname, lname, location, event_name], (err, results) => {
@@ -58,96 +71,48 @@ app.get('/', (req, res) => {
                 res.status(500).send('Error saving registration');
                 return;
             }
+            // If no error occurs, send a success message to the client.
             res.send('Registration successful. Thank you for registering!');
         });
     });
-
-//Create Account
-//Encrpyt using Password hashing algorithm
-//const bcrypt = require("bcryptjs")
-
-// app.use(express.urlencoded({extended: 'false'}))
-// app.use(express.json())
-
-// app.post('/create_account', async(req, res) => {   
-
-// const {email, password} = req.body.name;
-// const Hashedpassword = await bcrypt.hash(req.body.password,10);
-
-//
-//       const sqlSearch= "SELECT email, password from customers where email = ?"
-//         const search_query = mysql.format(sqlSearch,[email])
-
-//         const sqlInsert = "INSERT INTO customers VALUES (0,?,?)"
-//         const insert_query = mysql.format(sqlInsert,[email, Hashedpassword])
-
-//         await connection.query (search_query, async(err, result)=> {
-
-//             if(err) throw(err)
-//             console.log("-----> Search Results")
-//             console.log(result.length)
-
-//             if (result.length != 0) {
-//                 connection.release()
-//                 console.log("-----> User already exists")
-//                 res.sendStatus(409)
-//             }
-//             else {
-//                 await connection.query (insert_query, (err, results)=> {
-                
-//                 connection.release()
-
-//             if(err) throw(err)
-//             console.log ("------> Created new User")
-//             console.log(result.insertId)
-//             res.sendStatus(201)    
-//             })
-//         }
-//         })
-//         })
-//         })
-
-// // Login 
-// app.post('/account_info', (req, res)=> {
     
-// const email = req.body.name
-// const password = req.body.password
+// this is fot delete event registration
+app.post('/deleteRegistrationByLname', (req, res) => {
+    const { lname } = req.body;
+    db.query('DELETE FROM event_registration WHERE lname = ?', [lname], (err, result) => {
+        if (err) {
+            res.status(500).json({ message: 'Error deleting registration', error: err.message });
+        } else {
+            res.json({ message: 'Registration deleted successfully', affectedRows: result.affectedRows });
+        }
+    });
+});
 
-// // db.getConnection (async(err,connection)=> {
+// Sign-up route
+app.post('/signup', (req, res) => {
+    const {customer_id, email, password, birthdate, phone } = req.body;
 
-//     if(err) throw(err)
-//     const sqlSearch = "Select email, password from customers where email = ?"
-//     const search_query = sql.fomrat(sqlSearch, [email])
+    //const customer_id = uuidv4();
+    const sql = 'INSERT INTO customers (customer_id, username, email, password, birthdate, phone) VALUES (?, ?, ?, ?, ?, ?)';
+    db.query(sql, [customer_id, username, email, password, birthdate, phone], (err, result) => {
+        if (err) {
+            console.error('Error inserting data:', err);
+            return res.status(500).json({ success: false, message: 'Database error.' });
+        }else{
+            res.json({ success: true, message: 'User signed up successfully!' });
+        }
+        
+    });
+});
 
-//     await connection.query (search_query, async (err, result) => {
 
-//         connection.release()
-
-//         if(err) throw(err)
-    
-//         if(result.length ==0) {
-//             console.log("------> User does not exist")
-//         }
-//         else {
-//             const hashedPassword = result[0].password
-
-//             if(await bycrypt.compare(password, hashedPassword)) {
-//             console.log("-------> Login Successful")
-//             res.send('${email} is logged in!')
-//             }
-//             else {
-//             console.log("----------> Password Incorrect")
-//             res.send("Password incorrect!")
-//             } 
-//         }
-//     })
-//     })
-// })
-
-// Route to handle POST request
-// this is for update password
-
+// dont delete this please
+///////this is for update password
+///////design to update passwords based on a client's email.
+//Define a route that handles POST requests to update account password
 app.post('/account_info', (req, res) => {
+    //Expect the client to provide the 'email' and 'password' 
+    //fields in the body of the POST request.
     const { email, password } = req.body;
     const sql = `UPDATE customers SET password = ? where email = ?`;
     db.query(sql, [password, email], (err, result) => {
@@ -157,10 +122,37 @@ app.post('/account_info', (req, res) => {
         if (result.affectedRows === 0) {
             return res.status(404).json({ message: 'Email not found' });
         }
-        res.json({ message: 'Password updated successfully' });
+        res.json({ message: 'Updated Successfully!' });
     });
 });
 
+
+//
+    // Define a route to fetch locations based on city name
+    //app.
+
+// Define a route to fetch locations based on city name
+    app.post('/loginAccount', (req, res) => {
+        const { email, password } = req.body;
+        // The route handles GET requests to the "/search" endpoint.
+    const sql = `SELECT email, password FROM user WHERE  email = req.body.email AND password = req.body.password`; // SQL query to search users by password
+    // The '?' is a placeholder for a parameter value that will be provided in the execution of this query.
+    db.query(sql, [email,password], (err, results) => { // Use a parameterized query to prevent SQL injection
+        if (err) {
+            // If an error occurs during the database query, log the error and return a 500 Internal Server Error response.
+            console.error('Failed to execute query:', err);
+            return res.status(500).json({ error: 'Internal server error' });
+        }
+        if(results.length>0){
+            res.json({ message:'logged in successfully! welcome to Java_cafe!' });
+
+        }else{
+            res.status(401).json({  error:'Login failed: oh no your password or email is invalid!' });
+        }
+        // Return the query results as JSON
+        // Sends the results of the query back to the client as JSON.
+    });
+    });
 
 //Port
 app.listen(port, () => {
