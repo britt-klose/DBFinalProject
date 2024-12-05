@@ -8,8 +8,8 @@ const { v4: uuidv4 } = require('uuid');// Universally Unique Identifier Generate
 port=8081;
 // // Create an instance of express
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));  // Parsing Form Data
-app.use(bodyParser.json());  // Parsing JSON data
+//app.use(bodyParser.urlencoded({ extended: true }));  // Parsing Form Data
+//app.use(bodyParser.json());  // Parsing JSON data
 app.use(express.json());
 app.use(express.static('public'));
 app.use(cors()); // Enable CORS for the frontend React app
@@ -75,8 +75,10 @@ app.get('/', (req, res) => {
             res.send('Registration successful. Thank you for registering!');
         });
     });
-    
+
+    // dont delete this one 
 // this is fot delete event registration
+
 app.post('/deleteRegistrationByLname', (req, res) => {
     const { lname } = req.body;
     db.query('DELETE FROM event_registration WHERE lname = ?', [lname], (err, result) => {
@@ -88,9 +90,10 @@ app.post('/deleteRegistrationByLname', (req, res) => {
     });
 });
 
+
 // Sign-up route
 app.post('/signup', (req, res) => {
-    const {customer_id, email, password, birthdate, phone } = req.body;
+    const {customer_id, username, email, password, birthdate, phone } = req.body;
 
     //const customer_id = uuidv4();
     const sql = 'INSERT INTO customers (customer_id, username, email, password, birthdate, phone) VALUES (?, ?, ?, ?, ?, ?)';
@@ -98,9 +101,9 @@ app.post('/signup', (req, res) => {
         if (err) {
             console.error('Error inserting data:', err);
             return res.status(500).json({ success: false, message: 'Database error.' });
-        }else{
-            res.json({ success: true, message: 'User signed up successfully!' });
         }
+            res.json({ success: true, message: 'User signed up successfully!' });
+        
         
     });
 });
@@ -126,7 +129,6 @@ app.post('/account_info', (req, res) => {
     });
 });
 
-
 //
     // Define a route to fetch locations based on city name
     //app.
@@ -135,7 +137,7 @@ app.post('/account_info', (req, res) => {
     app.post('/loginAccount', (req, res) => {
         const { email, password } = req.body;
         // The route handles GET requests to the "/search" endpoint.
-    const sql = `SELECT email, password FROM user WHERE  email = req.body.email AND password = req.body.password`; // SQL query to search users by password
+    const sql = `SELECT email, password FROM customers WHERE email = ? AND password = ?`; // SQL query to search users by password
     // The '?' is a placeholder for a parameter value that will be provided in the execution of this query.
     db.query(sql, [email,password], (err, results) => { // Use a parameterized query to prevent SQL injection
         if (err) {

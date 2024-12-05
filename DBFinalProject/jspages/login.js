@@ -1,50 +1,29 @@
-// const loginFormHandler = async (event) => {
-//     event.preventDefault();
-  
-//     const email = document.querySelector('#email-login').value.trim();
-//     const password = document.querySelector('#password-login').value.trim();
-  
-//     if (email && password) {
-//       const response = await fetch('/api/users/login', {
-//         method: 'POST',
-//         body: JSON.stringify({ email, password }),
-//         headers: { 'Content-Type': 'application/json' },
-//       });
-  
-//       if (response.ok) {
-//         document.location.replace('/');
-//       } else {
-//         alert('Failed to log in');
-//       }
-//     }
-//   };
-  
-//   const signupFormHandler = async (event) => {
-//     event.preventDefault();
-  
-//     const name = document.querySelector('#name-signup').value.trim();
-//     const email = document.querySelector('#email-signup').value.trim();
-//     const password = document.querySelector('#password-signup').value.trim();
-  
-//     if (name && email && password) {
-//       const response = await fetch('/api/users', {
-//         method: 'POST',
-//         body: JSON.stringify({ name, email, password }),
-//         headers: { 'Content-Type': 'application/json' },
-//       });
-  
-//       if (response.ok) {
-//         document.location.replace('/');
-//       } else {
-//         alert(response.statusText);
-//       }
-//     }
-//   };
-  
-//   document
-//     .querySelector('.login-form')
-//     .addEventListener('submit', loginFormHandler);
-  
-//     document
-//     .querySelector('.signup-form')
-//     .addEventListener('submit', signupFormHandler);
+document.getElementById('signup-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log("Form submission detected");
+
+    const customer_id = document.getElementById('customer_id').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const phone = document.getElementById('phone').value;
+    const birthdate = document.getElementById('birthdate').value;
+
+    console.log("Form data:", {customer_id, username, email, password, phone, birthdate });
+
+    const response = await fetch('http://localhost:8081/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email, password}),
+    });
+    
+    const result = await response.json();
+    console.log("Server response:", result);
+    if (result.success) {
+        alert('You are now logged in! Close this window and start ordering!');
+    } else {
+        alert('Error signing in: ' + result.message);
+    }
+});
