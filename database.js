@@ -135,6 +135,7 @@ app.post('/account_info', (req, res) => {
 
 // Define a route to fetch locations based on city name
     app.post('/loginAccount', (req, res) => {
+        console.log(req.body);
         const { email, password } = req.body;
         // The route handles GET requests to the "/search" endpoint.
     const sql = `SELECT email, password FROM customers WHERE email = ? AND password = ?`; // SQL query to search users by password
