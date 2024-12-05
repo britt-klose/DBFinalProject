@@ -69,14 +69,15 @@
 <table align=center id="t2"
     <tr><td>
         <br>
-        <div>
-<form id="signup-form" name="signup-form"  method="POST" align="center">
+        <div>  
+<form id="signup-form" name="signup-form" 
+        action='http://localhost:8081/signup'
+        method="POST" align="center">
     <b align=center style="color:rgb(73,54,40); font-family:verdana; font-size: 30pt">Create Account</b>
     <br>
-    <label for="customer_id">ID: </label>
+    <br>
+    <label for="customer_id">SSN: </label>
     <input type="number" id="customer_id" name="customer_id">
-    <br>
-    <br>
     <br>
     <br>
     <label for="email">Email: </label>
@@ -93,7 +94,7 @@
     <br>
     <br>
 
-    <label for="password">Phone Number: </label>
+    <label for="phone">Phone Number: </label>
     <input type="tel" id="phone" name="phone" minlength="6" maxlength="20">
     <br>
     <br>
@@ -107,6 +108,17 @@
 
     </form>
     <br>
+
+    <!-- Success message section (initially hidden) -->
+    <div id="success-message" style="display:none; text-align:center;">
+        <h2>Congratulations! You have successfully signed up!</h2>
+    </div>
+
+    <!-- Login button section (initially hidden) -->
+    <div id="login-button" style="display:none; text-align:center;">
+        <button onclick="window.location.href = '/DBFinalProject/htmlFile/login.html';">Go to Sign In</button>
+    </div>
+    
     <a href="/DBFinalProject/htmlFile/login.html"> Already have an account? Login here</a>
  
     </div>

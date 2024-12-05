@@ -11,7 +11,7 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
 
     console.log("Form data:", {customer_id, username, email, password, phone, birthdate });
 
-    const response = await fetch('/signup', {
+    const response = await fetch('http://localhost:8081/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,7 +25,16 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
     const result = await response.json();
     console.log("Server response:", result);
     if (result.success) {
+        // Hide the signup form and show the success message
+        document.getElementById('signup-form').style.display = 'none'; // Hide the form
+        const messageDiv = document.getElementById('success-message');
+        messageDiv.style.display = 'block'; // Show the success message
+
         alert('User signed up successfully!');
+
+        const loginButton = document.getElementById('login-button');
+        loginButton.style.display = 'block'; // Show the login button
+        
     } else {
         alert('Error signing up: ' + result.message);
     }
