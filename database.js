@@ -150,7 +150,7 @@ app.post('/account_info', (req, res) => {
             res.json({ message:'logged in successfully! welcome to Java_cafe!' });
 
         }else{
-            res.status(401).json({  error:'Login failed: oh no your password or email is invalid!' });
+            res.status(401).json({ message:'logged in successfully! welcome to Java_cafe!' });
         }
         // Return the query results as JSON
         // Sends the results of the query back to the client as JSON.
