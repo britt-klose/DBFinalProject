@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Online Cafe store" />
+        <meta name="Deare Abudushalamu, Brittany Klose, Katrina Cwiertniewicz" content="" />
+        <title>Java Cafe</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/DBFinalProject/assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link href="/DBFinalProject/cssFiles/styles.css" rel="stylesheet" />
+        <link href="/DBFinalProject/cssFiles/location.css" rel="stylesheet" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <style>
+            /* 在这里添加内联CSS */
+            #productDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 保证两边对齐，中间间距均匀 */
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 帮助内容垂直分布 */
+    flex: 1 1 48%; /* 设置宽度以使得一行只显示两个 */
+    margin-bottom: 20px; /* 添加底部间距 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 可选的阴影效果 */
+    border: 1px solid #ccc; /* 可选的边框 */
+    padding: 5px; /* 内边距 */
+    min-height: 200px; /* 设置一个最小高度 */
+}
+
+.product-item p {
+    margin: 0 0 10px 0; /* 优化段落间距 */
+}
+
+.product-item button {
+    margin-top: auto; /* 将按钮推到底部 */
+    padding: 5px 10px; /* 按钮填充 */
+}
+        </style>
+    <body>
+         <!-- Navigation-->
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/Index.html">Java Cafe</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/locationForOrder.html">Start Order</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/menu.html">All Menu</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/sandwiches.html">Sandwiches</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/salads_bowls.html">Salads & Bowls</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/soups.html">Soups</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/bakery.html">Bakery</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/hot_drinks.html">Hot Drinks</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/cold_drinks.html">Cold Drinks</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/login.html">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/create_account.html">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/DBFinalProject/htmlFile/location.html">Location</a></li>
+                    </ul>
+                    <form class="d-flex">
+                      <a href="http://127.0.0.1:5501/DBFinalProject/htmlFile/locationForOrder.html" class="btn btn-outline-dark">
+                        Cart
+                        <i class="bi-cart-fill me-1"></i>
+                    </a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    <header>
+        <script src="/DBFinalProject/jspages/search.js"></script><!-- connected with search.js -->
+    </header>
+        <!-- Header-->
+        <header  class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder"> Start your order from here! </h1>
+                </div>
+            </div>
+        </header>
+        <section>
+            <label for="searchInput">
+                Start Order
+            </label>
+        </section> 
+        <body>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Product Display Area -->
+                    <div id="productDisplay" class="col-md-8"></div>
+        
+                    <!-- Shopping Cart Display Area -->
+                    <div id="cartDisplay" class="col-md-4">
+                        <h2>Your Cart</h2>
+                        <ul id="cartItems"></ul> <!-- the items in the shopping cart will be displayed here -->
+                        <h3>Total: $<span id="totalPrice">0</span></h3> <!-- total price -->
+                        <button id="submitOrder">Submit Order</button> <!-- Submit Order Button -->
+                    </div>
+                </div>  
+            </div>
+        </body>
+                <!-- Footer-->
+                <footer class="py-5 bg-dark" style="font-family: Arial, Helvetica, sans-serif;">
+                    <div class="container"><p class="m-0 text-center text-white">Author:Deare Abudushalamu, Brittany Klose, Katrina Cwiertniewicz</br>
+                        &copy;2024 copyright reserved<br>
+                        <small><a href="mailto:TeamProject@fake.com">TeamProject@fake.com</a</small></p> 
+                    </div>
+                </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/DBFinalProject/jspages/view.js"></script>
+    </body>
+    </html>
