@@ -135,7 +135,6 @@ app.post('/account_info', (req, res) => {
 
 // Define a route to fetch locations based on city name
     app.post('/loginAccount', (req, res) => {
-        console.log(req.body);
         const { email, password } = req.body;
         // The route handles GET requests to the "/search" endpoint.
     const sql = `SELECT email, password FROM customers WHERE email = ? AND password = ?`; // SQL query to search users by password
@@ -147,10 +146,10 @@ app.post('/account_info', (req, res) => {
             return res.status(500).json({ error: 'Internal server error' });
         }
         if(results.length>0){
-            res.json({ message:'logged in successfully! welcome to Java_cafe!' });
+            res.json({ success: true, message: 'logged in successfully! welcome to Java_cafe!' });
 
         }else{
-            res.status(401).json({ message:'logged in successfully! welcome to Java_cafe!' });
+            res.status(401).json({success: false, message:'Whoops! Invalid email or password!' });
         }
         // Return the query results as JSON
         // Sends the results of the query back to the client as JSON.

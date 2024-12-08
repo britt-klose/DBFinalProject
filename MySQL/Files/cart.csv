@@ -1,4 +1,4 @@
-cart_id,customer_id,item_id,item_name,item_price,quanity ,total_price
+cart_id,customer_id,item_id,item_name,item_price,quanity,total_price
 1,1,1,,,1,
 2,1,2,,,1,
 3,2,1,,,2,
